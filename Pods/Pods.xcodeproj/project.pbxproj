@@ -66,7 +66,7 @@
 		003FE7D64328D5C8CA8BFC26C1FA7FF3 /* Quintype.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quintype.h; path = CoreiOS/Quintype.h; sourceTree = "<group>"; };
 		014E515FA939B25D5CAA0836AAEA8D8D /* constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = constants.swift; path = CoreiOS/constants.swift; sourceTree = "<group>"; };
 		07BA19836279F64A0B0ACB711AC8D6C3 /* AnalyticPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnalyticPage.swift; path = CoreiOS/AnalyticPage.swift; sourceTree = "<group>"; };
-		0A2D419A3D86994E15E641191508346C /* Pods_DemoApp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DemoApp_iOS.framework; path = "Pods-DemoApp-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2D419A3D86994E15E641191508346C /* Pods_DemoApp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoApp_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C7FC763CA9D025E2B6FD3D7B9A2619 /* Pods-DemoApp-iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DemoApp-iOS-resources.sh"; sourceTree = "<group>"; };
 		204E79B10A7D0476AE08E81AB20277F2 /* ApiOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApiOptions.swift; path = CoreiOS/ApiOptions.swift; sourceTree = "<group>"; };
 		21943797E103A151A720E05A466003D6 /* Pods-DemoApp-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DemoApp-iOS-umbrella.h"; sourceTree = "<group>"; };
@@ -80,10 +80,10 @@
 		439BE8E0676E214CF0DADE4C13811F3C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45603D0BE5608E8C1FB968CB0BD491D7 /* Pods-DemoApp-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DemoApp-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		53C562E08012CD2013EE58D644A86227 /* AnalyticModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnalyticModel.swift; path = CoreiOS/AnalyticModel.swift; sourceTree = "<group>"; };
-		57B549513BD9E87B7A445AAE7CF8B5E0 /* Quintype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Quintype.framework; path = Quintype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B549513BD9E87B7A445AAE7CF8B5E0 /* Quintype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Quintype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A2A5363460D17A1DC012171078E3DF /* Search.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Search.swift; path = CoreiOS/Search.swift; sourceTree = "<group>"; };
 		5C80636021FF205ABF2DFA8FA7172C6C /* Quintype.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quintype.xcconfig; sourceTree = "<group>"; };
-		67BFAE7CB78A54BBEC6106B4FB4D77BC /* Quintype.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Quintype.modulemap; sourceTree = "<group>"; };
+		67BFAE7CB78A54BBEC6106B4FB4D77BC /* Quintype.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quintype.modulemap; sourceTree = "<group>"; };
 		6BE25C0A87B25F4D018DB619D6DAC148 /* ApiParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApiParser.swift; path = CoreiOS/ApiParser.swift; sourceTree = "<group>"; };
 		7D8FB50BB1BD6AF2722F0AD94C377897 /* Quintype.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Quintype.swift; path = CoreiOS/Quintype.swift; sourceTree = "<group>"; };
 		7DE6F7E2979B53AC24B454B801FA98AF /* Story.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Story.swift; path = CoreiOS/Story.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		8C760BC0121838E9C2B8D986A4D9B698 /* http.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = http.swift; path = CoreiOS/http.swift; sourceTree = "<group>"; };
 		8C79E7A8C9DD1DB1ED37626A3F4721D2 /* SectionMeta.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionMeta.swift; path = CoreiOS/SectionMeta.swift; sourceTree = "<group>"; };
 		8EC8F5B26227CEE95FEA74A69449BDAB /* Pods-DemoApp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DemoApp-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		990353145C103AA4FBA125666CEA8A31 /* Quintype-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quintype-prefix.pch"; sourceTree = "<group>"; };
 		99D3D2913D49810571824467A2BD256F /* StoryAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryAttributes.swift; path = CoreiOS/StoryAttributes.swift; sourceTree = "<group>"; };
 		9B03994B42FF13867DB27D8A2A7F4671 /* Quintype-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Quintype-dummy.m"; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		A378F788F38AC819EA8401B3F91572C9 /* Pods-DemoApp-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DemoApp-iOS-dummy.m"; sourceTree = "<group>"; };
 		A4A13BAA3F18025A2F84FB9CA149EED4 /* Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = CoreiOS/Extension.swift; sourceTree = "<group>"; };
 		A6B8F2F3027E80B027D84B15DF025E4B /* NSUserDefaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSUserDefaults.swift; path = CoreiOS/NSUserDefaults.swift; sourceTree = "<group>"; };
-		ACFB49EC632B2258D95446A689B7031F /* Pods-DemoApp-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DemoApp-iOS.modulemap"; sourceTree = "<group>"; };
+		ACFB49EC632B2258D95446A689B7031F /* Pods-DemoApp-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DemoApp-iOS.modulemap"; sourceTree = "<group>"; };
 		B31B9DA19A4C3053FF9238A2EA7869D2 /* Quintype-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quintype-umbrella.h"; sourceTree = "<group>"; };
 		B967A9C4028634D7EB176CF09B92301B /* CardStoryElementSubTypeMetaData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardStoryElementSubTypeMetaData.swift; path = CoreiOS/CardStoryElementSubTypeMetaData.swift; sourceTree = "<group>"; };
 		BC4CC85970B08A13C88AD7B8F3F8BEBB /* Analytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Analytics.swift; path = CoreiOS/Analytics.swift; sourceTree = "<group>"; };
@@ -226,7 +226,6 @@
 				D2E810DF3D0A31D02C75E810B0AD9C63 /* Tag.swift */,
 				189F43522677560AAE664D43E2D7B502 /* Support Files */,
 			);
-			name = Quintype;
 			path = Quintype;
 			sourceTree = "<group>";
 		};
@@ -426,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EC8F5B26227CEE95FEA74A69449BDAB /* Pods-DemoApp-iOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -461,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5C80636021FF205ABF2DFA8FA7172C6C /* Quintype.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -494,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F08FDCB85362863E5BC16B111598D2B5 /* Pods-DemoApp-iOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -530,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5C80636021FF205ABF2DFA8FA7172C6C /* Quintype.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -561,6 +564,7 @@
 		673254EEAF0B5BF4596080C749645884 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -601,6 +605,7 @@
 		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

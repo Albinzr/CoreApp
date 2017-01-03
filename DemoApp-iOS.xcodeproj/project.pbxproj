@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		611E7A881E15016D00966573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611E7A871E15016D00966573 /* AppDelegate.swift */; };
 		611E7A8A1E15016D00966573 /* InitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611E7A891E15016D00966573 /* InitialController.swift */; };
-		611E7A8D1E15016D00966573 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611E7A8B1E15016D00966573 /* Initial.storyboard */; };
 		611E7A921E15016D00966573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611E7A901E15016D00966573 /* LaunchScreen.storyboard */; };
 		611E7A9D1E15079000966573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611E7A871E15016D00966573 /* AppDelegate.swift */; };
 		611E7AE21E150AB700966573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611E7AE01E150AB000966573 /* LaunchScreen.storyboard */; };
 		611E7AE41E150B5600966573 /* InitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611E7A891E15016D00966573 /* InitialController.swift */; };
-		611E7AE71E150B6300966573 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611E7A8B1E15016D00966573 /* Initial.storyboard */; };
 		611E7AE91E150B6A00966573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611E7A901E15016D00966573 /* LaunchScreen.storyboard */; };
 		611E7AEA1E150B6D00966573 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 611E7A931E15016D00966573 /* Info.plist */; };
 		611E7AF21E150D4800966573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611E7A8E1E15016D00966573 /* Assets.xcassets */; };
 		611E7AF41E150DAE00966573 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611E7AEB1E150CD200966573 /* Media.xcassets */; };
 		611E7B011E16285F00966573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611E7AFF1E16282D00966573 /* Main.storyboard */; };
 		611E7B041E1A44B600966573 /* HtmlRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611E7B031E1A44B600966573 /* HtmlRender.swift */; };
+		61CB32931E1BAFE10051790F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32921E1BAFE10051790F /* HomeController.swift */; };
+		61CB32951E1BB2DA0051790F /* QuintypeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32941E1BB2DA0051790F /* QuintypeUtility.swift */; };
 		A614800A980D4A548BDC05C1 /* Pods_DemoApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A756AA5A8E9B5627C6B517 /* Pods_DemoApp_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,17 +29,17 @@
 		611E7A841E15016D00966573 /* DemoApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DemoApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		611E7A871E15016D00966573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		611E7A891E15016D00966573 /* InitialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialController.swift; sourceTree = "<group>"; };
-		611E7A8C1E15016D00966573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Initial.storyboard; sourceTree = "<group>"; };
 		611E7A8E1E15016D00966573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		611E7A911E15016D00966573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		611E7A931E15016D00966573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		611E7AA61E15079000966573 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		611E7AA71E15079100966573 /* Test.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Test.plist; path = "/Users/Albi/Documents/DemoApp-iOS/Test.plist"; sourceTree = "<absolute>"; };
 		611E7AE01E150AB000966573 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		611E7AE61E150B5900966573 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Initial.strings; sourceTree = "<group>"; };
 		611E7AEB1E150CD200966573 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		611E7AFF1E16282D00966573 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		611E7B031E1A44B600966573 /* HtmlRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlRender.swift; sourceTree = "<group>"; };
+		61CB32921E1BAFE10051790F /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		61CB32941E1BB2DA0051790F /* QuintypeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuintypeUtility.swift; sourceTree = "<group>"; };
 		678004B875230C9D8A8117DB /* Pods-DemoApp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoApp-iOS/Pods-DemoApp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FB5CD99D951A9265F2FA9346 /* Pods-DemoApp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoApp-iOS/Pods-DemoApp-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +128,7 @@
 		611E7AFC1E15248E00966573 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				61CB32941E1BB2DA0051790F /* QuintypeUtility.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -135,6 +136,7 @@
 		611E7AFD1E15270000966573 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				61CB328F1E1BAFB80051790F /* Home */,
 				611E7B021E1650E200966573 /* Initial */,
 			);
 			name = ViewController;
@@ -151,10 +153,17 @@
 		611E7B021E1650E200966573 /* Initial */ = {
 			isa = PBXGroup;
 			children = (
-				611E7A8B1E15016D00966573 /* Initial.storyboard */,
 				611E7A891E15016D00966573 /* InitialController.swift */,
 			);
 			name = Initial;
+			sourceTree = "<group>";
+		};
+		61CB328F1E1BAFB80051790F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				61CB32921E1BAFE10051790F /* HomeController.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		81C535FFF4478C399C0A25E9 /* Pods */ = {
@@ -259,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				611E7A921E15016D00966573 /* LaunchScreen.storyboard in Resources */,
-				611E7A8D1E15016D00966573 /* Initial.storyboard in Resources */,
 				611E7AF21E150D4800966573 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				611E7B011E16285F00966573 /* Main.storyboard in Resources */,
-				611E7AE71E150B6300966573 /* Initial.storyboard in Resources */,
 				611E7AE21E150AB700966573 /* LaunchScreen.storyboard in Resources */,
 				611E7AF41E150DAE00966573 /* Media.xcassets in Resources */,
 				611E7AEA1E150B6D00966573 /* Info.plist in Resources */,
@@ -332,8 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61CB32931E1BAFE10051790F /* HomeController.swift in Sources */,
 				611E7A8A1E15016D00966573 /* InitialController.swift in Sources */,
 				611E7B041E1A44B600966573 /* HtmlRender.swift in Sources */,
+				61CB32951E1BB2DA0051790F /* QuintypeUtility.swift in Sources */,
 				611E7A881E15016D00966573 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,15 +359,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		611E7A8B1E15016D00966573 /* Initial.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				611E7A8C1E15016D00966573 /* Base */,
-				611E7AE61E150B5900966573 /* en */,
-			);
-			name = Initial.storyboard;
-			sourceTree = "<group>";
-		};
 		611E7A901E15016D00966573 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -471,6 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8AG3F685RU;
 				INFOPLIST_FILE = "DemoApp-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "creation.DemoApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8AG3F685RU;
 				INFOPLIST_FILE = "DemoApp-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "creation.DemoApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -501,6 +503,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8AG3F685RU;
 				INFOPLIST_FILE = Test.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "creation.DemoApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,6 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8AG3F685RU;
 				INFOPLIST_FILE = Test.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "creation.DemoApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";

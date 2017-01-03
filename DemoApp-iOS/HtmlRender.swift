@@ -14,7 +14,7 @@ import UIKit
 //        do {
 //            return try NSAttributedString(data: self, options:[NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue], documentAttributes: nil)
 //        } catch let error as NSError {
-//            print(error.localizedDescription)
+//           //print(error.localizedDescription)
 //        }
 //        return nil
 //    }
@@ -32,7 +32,7 @@ import UIKit
 //            let attributedString = try NSAttributedString(data: self.data(using: String.Encoding.unicode, allowLossyConversion: true)!, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType], documentAttributes: nil)
 //            return attributedString
 //        } catch {
-//            print(error)
+//           //print(error)
 //            return NSAttributedString()
 //        }
 //    }
@@ -52,7 +52,7 @@ import UIKit
 //            return htmlText
 //        }
 //        catch {
-//            print("error creating HTML from Attributed String")
+//           //print("error creating HTML from Attributed String")
 //            return ""
 //        }
 //    }

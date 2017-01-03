@@ -17,11 +17,13 @@ import Quintype
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    var navigationController: UINavigationController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-            Quintype.initWithBaseUrl(baseURL: "https://www.thequint.com")
+        Quintype.initWithBaseUrl(baseURL: "https://www.thequint.com")
+        
+        loadInitialViewController()
         
         return true
     }
@@ -36,6 +38,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {}
     
+    
+    func loadInitialViewController(){
+        
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        // Set Background Color of window
+        window?.backgroundColor = UIColor.white
+        // Allocate memory for an instance of the 'MainViewController' class
+        let mainViewController = InitialController()
+        // Set the root view controller of the app's window
+        window!.rootViewController = mainViewController
+        // Make the window visible
+        window!.makeKeyAndVisible()
+        
+    }
     
 }
 

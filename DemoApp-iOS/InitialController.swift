@@ -6,32 +6,29 @@
 //  Copyright © 2016 Albin CR. All rights reserved.
 //
 
-import UIKit
-import  Quintype
-class InitialController: UIViewController {
+//MARK: - Controller only for getting config
 
-    @IBOutlet weak var textView: UITextView!
+import UIKit
+import Quintype
+
+class InitialController: UIViewController {
     
-  
+    let utility = QuintypeUtility.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         
-        Quintype.analytics.trackPageViewHomeVisit()
-        
-        Quintype.api.getStories(options: storiesOption.topStories, fields: nil, offset: nil, limit: nil, storyGroup: nil, cache: cacheOption.none) { (err, data) in
+        utility.showActivityIndicatory(uiView: view)
+        Quintype.api.getPublisherConfig(cache: cacheOption.loadOldCacheAndReplaceWithNew, Success: { (data) in
             
-            print(data)
+            print(data!)
+            self.view.backgroundColor = .red
+            self.utility.hideActivityIndicatory()
+        }) { (error) in
+            
         }
         
-        
-   }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 
