@@ -1,0 +1,27 @@
+{
+  "name": "Quintype",
+  "version": "0.0.7",
+  "summary": "/........................./",
+  "description": "....................................................",
+  "homepage": "https://github.com/Albinzr/Quintype",
+  "license": {
+    "type": "MIT",
+    "file": "FILE_LICENSE"
+  },
+  "authors": {
+    "Albin CR": "albinzr@gmail.com"
+  },
+  "platforms": {
+    "ios": "9.3"
+  },
+  "source": {
+    "git": "https://github.com/Albinzr/Quintype.git",
+    "tag": "0.0.7"
+  },
+  "source_files": [
+    "CoreiOS",
+    "CoreiOS/**/*.{h,m}"
+  ],
+  "public_header_files": "CoreiOS/**/*.h",
+  "requires_arc": true
+}

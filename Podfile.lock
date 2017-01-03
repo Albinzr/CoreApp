@@ -1,0 +1,22 @@
+PODS:
+  - Quintype (0.0.7)
+
+DEPENDENCIES:
+  - Quintype (from `https://github.com/Albinzr/Quintype.git`, tag `0.0.12`)
+
+EXTERNAL SOURCES:
+  Quintype:
+    :git: https://github.com/Albinzr/Quintype.git
+    :tag: 0.0.12
+
+CHECKOUT OPTIONS:
+  Quintype:
+    :git: https://github.com/Albinzr/Quintype.git
+    :tag: 0.0.12
+
+SPEC CHECKSUMS:
+  Quintype: d451338e5157ae662aef0df15f40997c2ac7ab5d
+
+PODFILE CHECKSUM: dc6892198d3f9d40d67c1b8c273a47614c79494c
+
+COCOAPODS: 1.1.1
