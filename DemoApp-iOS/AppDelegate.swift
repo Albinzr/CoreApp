@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Quintype.initWithBaseUrl(baseURL: "https://www.thequint.com")
         
         loadInitialViewController()
-        
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.makeKeyAndVisible()
+//        window?.rootViewController = CustomTabBarController()
         return true
     }
     

@@ -27,6 +27,17 @@ class QuintypeUtility{
         actInd.stopAnimating()
     }
     
+    class func presentHomeController(selfView:AnyObject){
+        let viewController:HomeController = HomeController()
+        selfView.present(viewController, animated: true, completion: nil)
+    }
     
+    class func initNavgationAndTabBar(){
+        
+        //Accesing window of the app
+        let appDelegate  = UIApplication.shared.delegate as? AppDelegate
+        let window = appDelegate?.window
+        window?.rootViewController = CustomTabBarController()
+    }
     
 }

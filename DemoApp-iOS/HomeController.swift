@@ -9,17 +9,23 @@
 import UIKit
 
 class HomeController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initNavgationbarIcon()
+        self.navigationItem.title = "..Home.."
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    private func initNavgationbarIcon(){
+        //TODO: - Error in click on search
+        let rightSearchBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action:  #selector(searchTapped(sender:)))
+        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
+        
     }
-
-
+    
+    func searchTapped(sender:AnyObject){
+        
+    }
+    
 }

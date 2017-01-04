@@ -17,18 +17,35 @@ class InitialController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        initializer()
+        
+    }
+    
+    
+    private func initializer(){
         
         utility.showActivityIndicatory(uiView: view)
         Quintype.api.getPublisherConfig(cache: cacheOption.loadOldCacheAndReplaceWithNew, Success: { (data) in
-            
-            print(data!)
-            self.view.backgroundColor = .red
+
             self.utility.hideActivityIndicatory()
+            QuintypeUtility.initNavgationAndTabBar()
+            
         }) { (error) in
+            
+            //TODO: - Try again logic -
             
         }
         
+        
     }
+    
+    
+   
 }
-
