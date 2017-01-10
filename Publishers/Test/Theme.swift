@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-
-
 public struct Themes{
     
     public struct DefaultThemes{
@@ -48,6 +46,7 @@ public struct Themes{
             static let storyHeaderColor = UIColor.white
             
             static let dateColor = UIColor.white
+            //static
             
         }
         
