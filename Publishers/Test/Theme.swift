@@ -6,6 +6,7 @@
 //  Copyright © 2017 Albin CR. All rights reserved.
 //
 
+
 import Foundation
 import UIKit
 import Quintype
