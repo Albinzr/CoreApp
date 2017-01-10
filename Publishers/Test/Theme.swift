@@ -26,7 +26,27 @@ public struct Themes{
             static let tabBarIconColor = UIColor.white
             static let tabBarShadowColor = UIColor.lightGray.cgColor
             static let tabBarTranslucent = true
+            static let showTabarEditButton = false
             
+        }
+        
+        public struct HomeHeaderCell{
+            
+            static let alphaLayerForCoverImageColor = UIColor.black
+            static let opacityAlphaLayerForCoverImageColor:CGFloat = 0.4
+            
+            static let sociallIcon = UIColor.white.cgColor
+            
+            static let sectionTextColor = UIColor.white
+            static let sectionUnderlineColor = UIColor.white
+            static let sectionUnderlineHeight:CGFloat = 3
+            
+            static let socialSepratorLineColor = UIColor.white
+            static let socialSepratorLineHeight = 0.5
+            
+            static let storyHeaderColor = UIColor.white
+            
+            static let dateColor = UIColor.white
             
         }
         
