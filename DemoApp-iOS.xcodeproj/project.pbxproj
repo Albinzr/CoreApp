@@ -14,7 +14,6 @@
 		611E7AF21E150D4800966573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611E7A8E1E15016D00966573 /* Assets.xcassets */; };
 		611E7B041E1A44B600966573 /* HtmlRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611E7B031E1A44B600966573 /* HtmlRender.swift */; };
 		616FF7F41E1CD7BB00D3807D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF7F31E1CD7BB00D3807D /* CustomTabBarController.swift */; };
-		616FF8541E1D07A200D3807D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF8531E1D07A200D3807D /* Theme.swift */; };
 		616FF8711E1D0A2400D3807D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32921E1BAFE10051790F /* HomeController.swift */; };
 		616FF8731E1D0A2400D3807D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF7F31E1CD7BB00D3807D /* CustomTabBarController.swift */; };
 		616FF8741E1D0A2400D3807D /* SwitchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32981E1BBD950051790F /* SwitchScreen.swift */; };
@@ -57,7 +56,6 @@
 		611E7A931E15016D00966573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		611E7B031E1A44B600966573 /* HtmlRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlRender.swift; sourceTree = "<group>"; };
 		616FF7F31E1CD7BB00D3807D /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		616FF8531E1D07A200D3807D /* Theme.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; name = Theme.swift; path = "/Users/Albi/Documents/DemoApp-iOS/Publishers/Test/Theme.swift"; sourceTree = "<absolute>"; };
 		616FF85E1E1D086600D3807D /* Pods_DemoApp_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_DemoApp_iOS.framework; path = "../../Library/Developer/Xcode/DerivedData/DemoApp-iOS-aqhxprsdggzegadecuwtoqslolxy/Build/Products/Debug-iphonesimulator/Pods_DemoApp_iOS.framework"; sourceTree = "<group>"; };
 		616FF86A1E1D08DF00D3807D /* Quintype.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quintype.framework; path = "../../Library/Developer/Xcode/DerivedData/DemoApp-iOS-aqhxprsdggzegadecuwtoqslolxy/Build/Products/Debug-iphonesimulator/Quintype/Quintype.framework"; sourceTree = "<group>"; };
 		616FF8871E1D0A2400D3807D /* Test-DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test-DemoApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,7 +225,6 @@
 		616FF8521E1D076200D3807D /* DefaultThemes */ = {
 			isa = PBXGroup;
 			children = (
-				616FF8531E1D07A200D3807D /* Theme.swift */,
 			);
 			name = DefaultThemes;
 			sourceTree = "<group>";
@@ -547,7 +544,6 @@
 				61CB329D1E1BC0260051790F /* Constants.swift in Sources */,
 				6198BA6C1E1FA1D90048731C /* HeaderCollectionCell.swift in Sources */,
 				61CB32951E1BB2DA0051790F /* QuintypeUtility.swift in Sources */,
-				616FF8541E1D07A200D3807D /* Theme.swift in Sources */,
 				618B9C811E23BA6C003273A5 /* DefaultStoryCell.swift in Sources */,
 				61CB329F1E1BC0670051790F /* ScreenOption.swift in Sources */,
 				6198BA641E1F66C50048731C /* BaseController.swift in Sources */,
