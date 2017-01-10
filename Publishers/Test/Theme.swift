@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Quintype
 public struct Themes{
     
     public struct DefaultThemes{
