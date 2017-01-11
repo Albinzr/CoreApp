@@ -168,6 +168,7 @@ class HeaderCollectionCell: BaseCollectionCell {
         storyHeader.anchor(self.contentView.topAnchor, left: self.contentView.leftAnchor, bottom: self.contentView.bottomAnchor, right: self.contentView.rightAnchor, topConstant: 5, leftConstant: 5, bottomConstant: 5, rightConstant: 5, widthConstant: 0, heightConstant: 0)
         
         
+        
     }
     
 }
