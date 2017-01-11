@@ -46,7 +46,7 @@ public struct Themes{
             static let socialSepratorLineColor = UIColor.white
             static let socialSepratorLineHeight = 0.5
             
-            static let storyHeaderColor = UIColor.white
+            static let storyHeaderColor = UIColor.black
             
             static let dateColor = UIColor.white
             //static

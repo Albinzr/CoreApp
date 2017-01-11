@@ -118,7 +118,7 @@ extension HomeController:UICollectionViewDataSource,UICollectionViewDelegate,UIC
             let currentCell = cell as?  HeaderCollectionCell
             
           
-            
+            currentCell?.configure(data: nil)
 //        }else{
 //             cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierDefaultStoryCollectionCell, for: indexPath)
 //            
@@ -148,13 +148,13 @@ extension HomeController:UICollectionViewDataSource,UICollectionViewDelegate,UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-      let targetSize =  CGSize(width: self.view.bounds.width, height: self.view.bounds.width)
+        let targetSize =  CGSize(width: self.view.bounds.width, height: self.view.bounds.width)
         let sizingCell:BaseCollectionCell?
 
             sizingCell = sizingCells[reuseIdentifierHeaderCollectionCell]
             sizingCell?.configure(data:nil)
             let calculatedSize = sizingCell?.calculateHeight(targetSize: targetSize)
-          // return targetSize
+         //  return targetSize
            return calculatedSize!
        
     }
