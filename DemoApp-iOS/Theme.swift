@@ -35,7 +35,7 @@ public struct Themes{
         public struct HomeHeaderCell{
             
             static let alphaLayerForCoverImageColor = UIColor.black
-            static let opacityAlphaLayerForCoverImageColor:CGFloat = 0.4
+            static let opacityAlphaLayerForCoverImageColor:CGFloat = 0.2
             
             static let sociallIcon = UIColor.white.cgColor
             
@@ -49,12 +49,14 @@ public struct Themes{
             static let storyHeaderColor = UIColor.white
             
             static let dateColor = UIColor.white
-            //static
+            
+            static let cellBorder = UIColor(red: 246/255.0, green: 246/255.0, blue: 246/255.0, alpha: 1).cgColor
             
         }
         
         
-        
+//        classic red UIColor(red: 255/255.0, green: 115/255.0, blue: 115/255.0, alpha: 1).cgColor
+//        mega gray UIColor(red: 246/255.0, green: 246/255.0, blue: 246/255.0, alpha: 1).cgColor
     }
     
     

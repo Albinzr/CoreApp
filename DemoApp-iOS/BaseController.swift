@@ -24,4 +24,7 @@ class BaseController: UIViewController {
         
     }
 
+    public func loadData(){
+        
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Quintype
 
 class HeaderCollectionCell: BaseCollectionCell {
     
@@ -24,15 +25,24 @@ class HeaderCollectionCell: BaseCollectionCell {
     override func configure(data: Any?) {
         
         self.coverImageView.image = UIImage(named: "video")
-        self.storyHeader.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
-        self.section.text = "adsadasdasdasd"
-        self.date.text = "27-10-1993"
+        
+        if let story = data as? Story{
+            
+            if let header = story.headline{ self.storyHeader.text = header }
+            if let storySection = story.sections[0].name{ self.section.text = storySection }
+            if let publishedDate = story.first_published_at{ self.date.text = publishedDate.convertTimeStampToDate }
+//            if let coverImage = story.
+            
+            
+        }
+        
+        
+        
     }
     
     
     var coverImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -55,13 +65,13 @@ class HeaderCollectionCell: BaseCollectionCell {
         
         let view = UIView()
         view.backgroundColor = Themes.DefaultThemes.HomeHeaderCell.socialSepratorLineColor
-    
+        
         return view
         
     }()
     
     var date:UILabel = {
-    
+        
         let label = UILabel()
         label.textColor = Themes.DefaultThemes.HomeHeaderCell.dateColor
         return label
@@ -77,7 +87,7 @@ class HeaderCollectionCell: BaseCollectionCell {
     }()
     
     var storyHeader:UILabel = {
-       
+        
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .justified
@@ -119,11 +129,11 @@ class HeaderCollectionCell: BaseCollectionCell {
         
     }()
     
- 
+    
     override func setupViews() {
         
-//        self.contentView.addSubview(coverImageView)
-        self.contentView.addSubview(alphaLayerForCoverImage)
+        self.contentView.addSubview(coverImageView)
+        self.coverImageView.addSubview(alphaLayerForCoverImage)
         self.contentView.addSubview(bottomSocialBar)
         self.contentView.addSubview(sepratingBar)
         self.contentView.addSubview(storyHeader)
@@ -134,23 +144,21 @@ class HeaderCollectionCell: BaseCollectionCell {
         self.bottomSocialBar.addSubview(bookMarkButton)
         self.bottomSocialBar.addSubview(shareButton)
         
+    
         
-        
-//        coverImageView.fillSuperview()
-//        
-//        coverImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
+        coverImageView.anchor(self.contentView.topAnchor, left: self.contentView.leftAnchor, bottom: self.contentView.bottomAnchor, right: self.contentView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 480)
         
         alphaLayerForCoverImage.fillSuperview()
         
-        bottomSocialBar.anchor(nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 15, bottomConstant: 8, rightConstant: 15, widthConstant: 0, heightConstant: 40)
-    
+        bottomSocialBar.anchor(nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 15, bottomConstant: 15, rightConstant: 15, widthConstant: 0, heightConstant: 40)
+        
         sepratingBar.anchor(nil, left: self.leftAnchor, bottom: self.bottomSocialBar.topAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 15, bottomConstant: 0, rightConstant: 15, widthConstant: 0, heightConstant: 1)
         
         storyHeader.anchor(nil, left: self.leftAnchor, bottom: self.sepratingBar.topAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 15, bottomConstant: 15, rightConstant: 15, widthConstant: 0, heightConstant: 0)
-        
+
         section.anchor(nil, left: self.leftAnchor, bottom: storyHeader.topAnchor, right: nil, topConstant: 0, leftConstant: 15, bottomConstant: 10, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-       
-        border.anchor(nil, left: self.section.leftAnchor, bottom: self.section.bottomAnchor, right: self.section.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: section.bounds.width, heightConstant: Themes.DefaultThemes.HomeHeaderCell.sectionUnderlineHeight)
+        
+        border.anchor(nil, left: self.section.leftAnchor, bottom: self.section.bottomAnchor, right: self.section.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -2, rightConstant: 0, widthConstant: section.bounds.width, heightConstant: Themes.DefaultThemes.HomeHeaderCell.sectionUnderlineHeight)
         
         date.anchor(nil, left: nil, bottom: self.storyHeader.topAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 15, rightConstant: 15, widthConstant: 0, heightConstant: 0)
         

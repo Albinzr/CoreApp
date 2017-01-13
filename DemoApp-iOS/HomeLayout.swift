@@ -8,6 +8,16 @@
 
 import Foundation
 
-public enum homeLayout{
+public enum homeLayout:String{
+    
+    case TopFull = "topfull"
+    case TopRow = "toprow"
+    case Row = "Row"
+    case Header = "header"
+    case VideoCarousel = "videocarousel"
+    case GalleryCarousel = "gallerycarousel"
+    case MovieReview = "moviereview"
+    case Enterprise = "enterprise"
+    case VideoStories = "videosotries"
     
 }
