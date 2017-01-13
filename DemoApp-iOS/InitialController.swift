@@ -34,7 +34,7 @@ class InitialController: UIViewController {
         utility.showActivityIndicatory(uiView: view)
         Quintype.api.getPublisherConfig(cache: cacheOption.loadOldCacheAndReplaceWithNew, Success: { (data) in
 
-            self.utility.hideActivityIndicatory()
+            self.utility.hideActivityIndicatory(uiView: self.view)
             QuintypeUtility.initNavgationAndTabBar()
             
         }) { (error) in

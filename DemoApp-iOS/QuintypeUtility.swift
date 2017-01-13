@@ -20,11 +20,13 @@ class QuintypeUtility{
         actInd.hidesWhenStopped = true
         actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
         uiView.addSubview(actInd)
+        uiView.isUserInteractionEnabled = false
         actInd.startAnimating()
         
     }
-    func hideActivityIndicatory(){
+    func hideActivityIndicatory(uiView: UIView){
         actInd.stopAnimating()
+         uiView.isUserInteractionEnabled = true
     }
     
 //    class func presentHomeController(selfView:AnyObject){

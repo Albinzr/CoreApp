@@ -20,9 +20,6 @@ class DefaultStoryCell: BaseCollectionCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
-    
     override func configure(data: Any?) {
         
         self.headerImageView.image = UIImage(named: "video")
@@ -32,9 +29,14 @@ class DefaultStoryCell: BaseCollectionCell {
             if let header = story.headline{ self.storyheader.text = header }
             if let storySection = story.sections[0].name{ self.section.text = storySection }
             if let publishedDate = story.first_published_at{ self.date.text = publishedDate.convertTimeStampToDate }
-            //            if let coverImage = story.
             
-            
+            DispatchQueue.main.async {
+                let path = UIBezierPath(roundedRect:self.imageCoverView.bounds, byRoundingCorners:[.topRight, .topLeft], cornerRadii: CGSize(width: 15, height: 15))
+                let maskLayer = CAShapeLayer()
+                maskLayer.path = path.cgPath
+                self.imageCoverView.layer.mask = maskLayer
+                self.headerImageView.layer.mask = maskLayer
+            }
         }
     }
     
@@ -42,17 +44,17 @@ class DefaultStoryCell: BaseCollectionCell {
         
         let view:UIView = UIView()
         view.layer.cornerRadius = 15
-        view.layer.borderColor = Themes.DefaultThemes.HomeHeaderCell.cellBorder
+        view.layer.borderColor = Themes.DefaultThemes.defaultCell.cellBorder
         view.layer.borderWidth = 1
+        view.backgroundColor =  Themes.DefaultThemes.defaultCell.cellBackground
         return view
         
     }()
     
-    
     let imageCoverView:UIView = {
         
         let view:UIView = UIView()
-        view.backgroundColor = Themes.DefaultThemes.HomeHeaderCell.alphaLayerForCoverImageColor
+        view.backgroundColor = Themes.DefaultThemes.defaultCell.alphaLayerForCoverImageColor
         view.backgroundColor = .black
         view.alpha = 0.2
         return view
@@ -65,11 +67,10 @@ class DefaultStoryCell: BaseCollectionCell {
         return imageView
     }()
     
-    
     var date:UILabel = {
         
         let label = UILabel()
-        label.textColor = Themes.DefaultThemes.HomeHeaderCell.dateColor
+        label.textColor = Themes.DefaultThemes.defaultCell.dateColor
         return label
         
     }()
@@ -77,7 +78,7 @@ class DefaultStoryCell: BaseCollectionCell {
     var section:UILabel = {
         
         let label = UILabel()
-        label.textColor = Themes.DefaultThemes.HomeHeaderCell.sectionTextColor
+        label.textColor = Themes.DefaultThemes.defaultCell.sectionTextColor
         return label
         
     }()
@@ -85,18 +86,17 @@ class DefaultStoryCell: BaseCollectionCell {
     var border:UIView = {
         
         let view = UIView()
-        view.backgroundColor = Themes.DefaultThemes.HomeHeaderCell.sectionUnderlineColor
+        view.backgroundColor = Themes.DefaultThemes.defaultCell.sectionUnderlineColor
         return view
         
     }()
-    
     
     let storyheader:UILabel = {
         
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .justified
-        label.textColor = Themes.DefaultThemes.HomeHeaderCell.storyHeaderColor
+        label.textColor = Themes.DefaultThemes.defaultCell.storyHeaderColor
         return label
         
     }()
@@ -111,8 +111,7 @@ class DefaultStoryCell: BaseCollectionCell {
     var sepratingBar:UIView = {
         
         let view = UIView()
-        view.backgroundColor = Themes.DefaultThemes.HomeHeaderCell.socialSepratorLineColor
-        
+        view.backgroundColor = Themes.DefaultThemes.defaultCell.socialSepratorLineColor
         return view
         
     }()
@@ -157,34 +156,21 @@ class DefaultStoryCell: BaseCollectionCell {
         self.bottomSocialBar.addSubview(bookMarkButton)
         self.bottomSocialBar.addSubview(shareButton)
         
-        
-        
-        
-        DispatchQueue.main.async {
-            let path = UIBezierPath(roundedRect:self.imageCoverView.bounds, byRoundingCorners:[.topRight, .topLeft], cornerRadii: CGSize(width: 15, height: 15))
-            let maskLayer = CAShapeLayer()
-            maskLayer.path = path.cgPath
-            self.imageCoverView.layer.mask = maskLayer
-            
-        }
-
-        
         coverView.anchor(self.contentView.topAnchor, left: self.contentView.leftAnchor, bottom: self.contentView.bottomAnchor, right: self.contentView.rightAnchor, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 8, widthConstant: 0, heightConstant: 0)
         
         headerImageView.anchor(self.coverView.topAnchor, left: self.coverView.leftAnchor, bottom:  nil, right: self.coverView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
         
-        self.imageCoverView.anchor(self.coverView.topAnchor, left: self.coverView.leftAnchor, bottom:  nil, right: self.coverView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
+        imageCoverView.anchor(self.coverView.topAnchor, left: self.coverView.leftAnchor, bottom:  nil, right: self.coverView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 300)
         
         section.anchor(self.coverView.topAnchor, left: self.coverView.leftAnchor, bottom: nil, right: nil, topConstant: 15, leftConstant: 15, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
-        border.anchor(nil, left: self.section.leftAnchor, bottom: self.section.bottomAnchor, right: self.section.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -2, rightConstant: 0, widthConstant: section.bounds.width, heightConstant: Themes.DefaultThemes.HomeHeaderCell.sectionUnderlineHeight)
+        border.anchor(nil, left: self.section.leftAnchor, bottom: self.section.bottomAnchor, right: self.section.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -2, rightConstant: 0, widthConstant: section.bounds.width, heightConstant: Themes.DefaultThemes.defaultCell.sectionUnderlineHeight)
         
         date.anchor(self.coverView.topAnchor, left: nil, bottom: nil, right: self.coverView.rightAnchor, topConstant: 15, leftConstant: 0, bottomConstant: 0, rightConstant: 15, widthConstant: 0, heightConstant: 0)
         
         storyheader.anchor(self.headerImageView.bottomAnchor, left: self.coverView.leftAnchor, bottom: self.bottomSocialBar.topAnchor, right: self.coverView.rightAnchor, topConstant: 10, leftConstant: 10, bottomConstant: 10, rightConstant: 10, widthConstant: 0, heightConstant: 0)
         
         bottomSocialBar.anchor(self.storyheader.bottomAnchor, left: self.coverView.leftAnchor, bottom: self.coverView.bottomAnchor, right: self.coverView.rightAnchor, topConstant: 10, leftConstant: 10, bottomConstant: 0, rightConstant: 10, widthConstant: 0, heightConstant: 40)
-        
         
         sepratingBar.anchor(nil, left: self.leftAnchor, bottom: self.bottomSocialBar.topAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 15, bottomConstant: 0, rightConstant: 15, widthConstant: 0, heightConstant: 1)
         
@@ -193,10 +179,6 @@ class DefaultStoryCell: BaseCollectionCell {
         bookMarkButton.anchor(self.bottomSocialBar.topAnchor, left: self.commentButton.rightAnchor, bottom: self.bottomSocialBar.bottomAnchor, right: nil, topConstant: 5, leftConstant: 15, bottomConstant: 5, rightConstant: 0, widthConstant: 30, heightConstant: 30)
         
         shareButton.anchor(self.bottomSocialBar.topAnchor, left: self.bookMarkButton.rightAnchor, bottom: self.bottomSocialBar.bottomAnchor, right: nil, topConstant: 5, leftConstant: 15, bottomConstant: 5, rightConstant: 0, widthConstant: 30, heightConstant: 30)
-        
-
-    
-        
     }
     
 }

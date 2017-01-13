@@ -14,6 +14,8 @@ class HomeController: BaseController{
     let reuseIdentifierHeaderCollectionCell = "headerCollectionCell"
     let reuseIdentifierDefaultStoryCollectionCell = "defaultStoryCell"
     
+    let utility = QuintypeUtility.sharedInstance
+    
     let screen = UIScreen.main.bounds
     let itemSizeForPortraitMode = 100
     let itemSizeForLandscapeMode = 200
@@ -30,6 +32,7 @@ class HomeController: BaseController{
             
             if menu?.count == storyCollectionArray.count{
                 self.homeCollectionView.reloadData()
+                utility.hideActivityIndicatory(uiView: view)
             }
         }
         
@@ -69,7 +72,7 @@ class HomeController: BaseController{
     
     override func loadData() {
         super.loadData()
-        
+        utility.showActivityIndicatory(uiView: view)
         menu?.forEach({ (singleMenu) in
             
             if let slug =  singleMenu.section_slug{
