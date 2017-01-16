@@ -15,7 +15,7 @@
 		611E7B041E1A44B600966573 /* HtmlRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611E7B031E1A44B600966573 /* HtmlRender.swift */; };
 		613AA8691E28D8CD0017502B /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AA8681E28D8CD0017502B /* CAPSPageMenu.swift */; };
 		616FF7F41E1CD7BB00D3807D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF7F31E1CD7BB00D3807D /* CustomTabBarController.swift */; };
-		616FF8711E1D0A2400D3807D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32921E1BAFE10051790F /* HomeController.swift */; };
+		616FF8711E1D0A2400D3807D /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32921E1BAFE10051790F /* ContainerController.swift */; };
 		616FF8731E1D0A2400D3807D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF7F31E1CD7BB00D3807D /* CustomTabBarController.swift */; };
 		616FF8741E1D0A2400D3807D /* SwitchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32981E1BBD950051790F /* SwitchScreen.swift */; };
 		616FF8751E1D0A2400D3807D /* InitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611E7A891E15016D00966573 /* InitialController.swift */; };
@@ -26,7 +26,7 @@
 		616FF87B1E1D0A2400D3807D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611E7A871E15016D00966573 /* AppDelegate.swift */; };
 		616FF8801E1D0A2400D3807D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 611E7A901E15016D00966573 /* LaunchScreen.storyboard */; };
 		616FF8811E1D0A2400D3807D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611E7A8E1E15016D00966573 /* Assets.xcassets */; };
-		617FE52E1E275E9600E4D4B9 /* HomeCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FE52D1E275E9600E4D4B9 /* HomeCollectionViewExtension.swift */; };
+		617FE52E1E275E9600E4D4B9 /* PagerControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FE52D1E275E9600E4D4B9 /* PagerControllerExtension.swift */; };
 		617FE5301E2782D400E4D4B9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FE52F1E2782D400E4D4B9 /* DateExtension.swift */; };
 		617FE5321E27957A00E4D4B9 /* BorderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FE5311E27957A00E4D4B9 /* BorderExtension.swift */; };
 		617FE5341E27B11000E4D4B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FE5331E27B11000E4D4B9 /* ViewController.swift */; };
@@ -35,12 +35,12 @@
 		6198BA641E1F66C50048731C /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198BA631E1F66C50048731C /* BaseController.swift */; };
 		6198BA671E1F9A160048731C /* Ancher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198BA661E1F9A160048731C /* Ancher.swift */; };
 		6198BA6C1E1FA1D90048731C /* HeaderCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198BA6B1E1FA1D90048731C /* HeaderCollectionCell.swift */; };
-		61CB32931E1BAFE10051790F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32921E1BAFE10051790F /* HomeController.swift */; };
+		61B056951E2C8E2D00974BED /* PagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B056941E2C8E2C00974BED /* PagerController.swift */; };
+		61CB32931E1BAFE10051790F /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32921E1BAFE10051790F /* ContainerController.swift */; };
 		61CB32951E1BB2DA0051790F /* QuintypeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32941E1BB2DA0051790F /* QuintypeUtility.swift */; };
 		61CB32991E1BBD950051790F /* SwitchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32981E1BBD950051790F /* SwitchScreen.swift */; };
 		61CB329D1E1BC0260051790F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB329C1E1BC0260051790F /* Constants.swift */; };
 		61CB329F1E1BC0670051790F /* ScreenOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB329E1E1BC0670051790F /* ScreenOption.swift */; };
-		61D5EFF61E24E23A002343F3 /* HomeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5EFF51E24E23A002343F3 /* HomeLayout.swift */; };
 		61D5EFF81E250970002343F3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5EFF71E250970002343F3 /* Theme.swift */; };
 		61FA3A961E2385C7007BDBA8 /* BaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FA3A951E2385C7007BDBA8 /* BaseCollectionCell.swift */; };
 		70ADEE1954A9922DF7E47B50 /* Pods_DemoApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232AE8E1B7E95F6D07C027BD /* Pods_DemoApp_iOS.framework */; };
@@ -67,7 +67,7 @@
 		616FF86A1E1D08DF00D3807D /* Quintype.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quintype.framework; path = "../../Library/Developer/Xcode/DerivedData/DemoApp-iOS-aqhxprsdggzegadecuwtoqslolxy/Build/Products/Debug-iphonesimulator/Quintype/Quintype.framework"; sourceTree = "<group>"; };
 		616FF8871E1D0A2400D3807D /* Test-DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test-DemoApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		616FF8881E1D0A2400D3807D /* DemoApp-iOS copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DemoApp-iOS copy-Info.plist"; path = "/Users/Albi/Documents/DemoApp-iOS/DemoApp-iOS copy-Info.plist"; sourceTree = "<absolute>"; };
-		617FE52D1E275E9600E4D4B9 /* HomeCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewExtension.swift; sourceTree = "<group>"; };
+		617FE52D1E275E9600E4D4B9 /* PagerControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerControllerExtension.swift; sourceTree = "<group>"; };
 		617FE52F1E2782D400E4D4B9 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		617FE5311E27957A00E4D4B9 /* BorderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderExtension.swift; sourceTree = "<group>"; };
 		617FE5331E27B11000E4D4B9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,12 +76,12 @@
 		6198BA631E1F66C50048731C /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		6198BA661E1F9A160048731C /* Ancher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ancher.swift; sourceTree = "<group>"; };
 		6198BA6B1E1FA1D90048731C /* HeaderCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionCell.swift; sourceTree = "<group>"; };
-		61CB32921E1BAFE10051790F /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		61B056941E2C8E2C00974BED /* PagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerController.swift; sourceTree = "<group>"; };
+		61CB32921E1BAFE10051790F /* ContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 		61CB32941E1BB2DA0051790F /* QuintypeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuintypeUtility.swift; sourceTree = "<group>"; };
 		61CB32981E1BBD950051790F /* SwitchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchScreen.swift; sourceTree = "<group>"; };
 		61CB329C1E1BC0260051790F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		61CB329E1E1BC0670051790F /* ScreenOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenOption.swift; sourceTree = "<group>"; };
-		61D5EFF51E24E23A002343F3 /* HomeLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeLayout.swift; sourceTree = "<group>"; };
 		61D5EFF71E250970002343F3 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		61FA3A951E2385C7007BDBA8 /* BaseCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionCell.swift; sourceTree = "<group>"; };
 		625F327DB53158F45968529D /* Pods-DemoApp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoApp-iOS/Pods-DemoApp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				611E7B021E1650E200966573 /* Initial */,
-				61CB328F1E1BAFB80051790F /* Home */,
+				61CB328F1E1BAFB80051790F /* Continer */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -274,15 +274,14 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		61CB328F1E1BAFB80051790F /* Home */ = {
+		61CB328F1E1BAFB80051790F /* Continer */ = {
 			isa = PBXGroup;
 			children = (
-				61D5EFF41E24E223002343F3 /* LayoutOrder */,
-				61CB32921E1BAFE10051790F /* HomeController.swift */,
-				617FE52D1E275E9600E4D4B9 /* HomeCollectionViewExtension.swift */,
 				6198BA681E1FA19A0048731C /* Cells */,
+				61FCE2B41E2CD194009DEFF6 /* Pager */,
+				61CB32921E1BAFE10051790F /* ContainerController.swift */,
 			);
-			name = Home;
+			name = Continer;
 			sourceTree = "<group>";
 		};
 		61CB32961E1BBD6E0051790F /* Utility */ = {
@@ -303,14 +302,6 @@
 			name = Screen;
 			sourceTree = "<group>";
 		};
-		61D5EFF41E24E223002343F3 /* LayoutOrder */ = {
-			isa = PBXGroup;
-			children = (
-				61D5EFF51E24E23A002343F3 /* HomeLayout.swift */,
-			);
-			name = LayoutOrder;
-			sourceTree = "<group>";
-		};
 		61FA3A921E238583007BDBA8 /* BaseComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +309,15 @@
 				61FA3A951E2385C7007BDBA8 /* BaseCollectionCell.swift */,
 			);
 			name = BaseComponents;
+			sourceTree = "<group>";
+		};
+		61FCE2B41E2CD194009DEFF6 /* Pager */ = {
+			isa = PBXGroup;
+			children = (
+				617FE52D1E275E9600E4D4B9 /* PagerControllerExtension.swift */,
+				61B056941E2C8E2C00974BED /* PagerController.swift */,
+			);
+			name = Pager;
 			sourceTree = "<group>";
 		};
 		75783A967292EB23400B715E /* Frameworks */ = {
@@ -560,24 +560,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				6198BA671E1F9A160048731C /* Ancher.swift in Sources */,
-				61CB32931E1BAFE10051790F /* HomeController.swift in Sources */,
+				61CB32931E1BAFE10051790F /* ContainerController.swift in Sources */,
 				616FF7F41E1CD7BB00D3807D /* CustomTabBarController.swift in Sources */,
 				617FE5321E27957A00E4D4B9 /* BorderExtension.swift in Sources */,
 				61CB32991E1BBD950051790F /* SwitchScreen.swift in Sources */,
 				611E7A8A1E15016D00966573 /* InitialController.swift in Sources */,
 				613AA8691E28D8CD0017502B /* CAPSPageMenu.swift in Sources */,
-				61D5EFF61E24E23A002343F3 /* HomeLayout.swift in Sources */,
 				611E7B041E1A44B600966573 /* HtmlRender.swift in Sources */,
 				61FA3A961E2385C7007BDBA8 /* BaseCollectionCell.swift in Sources */,
 				61CB329D1E1BC0260051790F /* Constants.swift in Sources */,
 				617FE5341E27B11000E4D4B9 /* ViewController.swift in Sources */,
 				617FE5301E2782D400E4D4B9 /* DateExtension.swift in Sources */,
-				617FE52E1E275E9600E4D4B9 /* HomeCollectionViewExtension.swift in Sources */,
+				617FE52E1E275E9600E4D4B9 /* PagerControllerExtension.swift in Sources */,
 				61D5EFF81E250970002343F3 /* Theme.swift in Sources */,
 				6198BA6C1E1FA1D90048731C /* HeaderCollectionCell.swift in Sources */,
 				61CB32951E1BB2DA0051790F /* QuintypeUtility.swift in Sources */,
 				618B9C811E23BA6C003273A5 /* DefaultStoryCell.swift in Sources */,
 				61CB329F1E1BC0670051790F /* ScreenOption.swift in Sources */,
+				61B056951E2C8E2D00974BED /* PagerController.swift in Sources */,
 				6198BA641E1F66C50048731C /* BaseController.swift in Sources */,
 				611E7A881E15016D00966573 /* AppDelegate.swift in Sources */,
 			);
@@ -587,7 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				616FF8711E1D0A2400D3807D /* HomeController.swift in Sources */,
+				616FF8711E1D0A2400D3807D /* ContainerController.swift in Sources */,
 				616FF8731E1D0A2400D3807D /* CustomTabBarController.swift in Sources */,
 				616FF8741E1D0A2400D3807D /* SwitchScreen.swift in Sources */,
 				616FF8751E1D0A2400D3807D /* InitialController.swift in Sources */,

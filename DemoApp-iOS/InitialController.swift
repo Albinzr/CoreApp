@@ -11,7 +11,7 @@
 import UIKit
 import Quintype
 
-class InitialController: UIViewController {
+class InitialController: BaseController {
     
     let utility = QuintypeUtility.sharedInstance
     
@@ -25,6 +25,7 @@ class InitialController: UIViewController {
         super.viewDidAppear(animated)
 
         initializer()
+
         
     }
     
@@ -46,6 +47,7 @@ class InitialController: UIViewController {
         
     }
     
+
     
    
 }

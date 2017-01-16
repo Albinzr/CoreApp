@@ -23,7 +23,7 @@ class CustomTabBarController: UITabBarController {
             var currentMenuCollection =  menuArray?.filter({ (menu:Menu) -> Bool in return  menuArray?[i].id == menu.parent_id })
             
             currentMenuCollection?.append(menuArray![i])
-            let homeController = HomeController(singleMenu:currentMenuCollection)
+            let homeController = ContainerController(singleMenu:currentMenuCollection)
             let homeNavigationController = UINavigationController(rootViewController: homeController)
             homeNavigationController.title = menuArray?[i].title
             homeNavigationController.tabBarItem.image = UIImage(named: "")
@@ -55,6 +55,9 @@ class CustomTabBarController: UITabBarController {
             navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : Themes.DefaultThemes.navigation.navigationBarTitleColor]
             navigationBar.isTranslucent = Themes.DefaultThemes.navigation.navigationBarTranslucent
             controller.hidesBarsOnSwipe = Themes.DefaultThemes.navigation.navigationHideOnScroll
+            //removerd shadow line bellow navigation bar
+            navigationBar.shadowImage = UIImage()
+            navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         })
         
         let moreNavigationBar = self.moreNavigationController.navigationBar

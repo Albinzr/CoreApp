@@ -1,22 +1,31 @@
 PODS:
   - Quintype (0.0.7)
+  - XLPagerTabStrip (5.0.0)
 
 DEPENDENCIES:
   - Quintype (from `https://github.com/Albinzr/Quintype.git`, tag `0.0.30`)
+  - XLPagerTabStrip (from `https://github.com/KelvinJin/XLPagerTabStrip.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
   Quintype:
     :git: https://github.com/Albinzr/Quintype.git
     :tag: 0.0.30
+  XLPagerTabStrip:
+    :branch: swift3
+    :git: https://github.com/KelvinJin/XLPagerTabStrip.git
 
 CHECKOUT OPTIONS:
   Quintype:
     :git: https://github.com/Albinzr/Quintype.git
     :tag: 0.0.30
+  XLPagerTabStrip:
+    :commit: 99e3cbd5e6b99bb6b1fdf25f4af58fe2e38ad308
+    :git: https://github.com/KelvinJin/XLPagerTabStrip.git
 
 SPEC CHECKSUMS:
   Quintype: d451338e5157ae662aef0df15f40997c2ac7ab5d
+  XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: a663c6d2278a0f180a5c82a1d12701530e361677
+PODFILE CHECKSUM: 18b738fdafa2939993f087c512b80095e1a21631
 
 COCOAPODS: 1.1.1

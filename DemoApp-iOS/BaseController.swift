@@ -8,13 +8,18 @@
 
 import UIKit
 
-
 class BaseController: UIViewController {
-
+    
     init() {
-      super.init(nibName: nil, bundle: nil)   
+        super.init(nibName: nil, bundle: nil)
+        
     }
     
+    
+    override func viewDidLoad() {
+       self.automaticallyAdjustsScrollViewInsets = false
+          
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -23,8 +28,14 @@ class BaseController: UIViewController {
     public func setupViews(){
         
     }
-
+    
     public func loadData(){
         
+        
     }
+    
+    
+    
 }
+
+
