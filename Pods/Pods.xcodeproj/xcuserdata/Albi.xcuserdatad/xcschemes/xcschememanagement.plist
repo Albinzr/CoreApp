@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-DemoApp-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -15,6 +20,11 @@
 			<false/>
 		</dict>
 		<key>Quintype.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Toucan.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>021E032B46E10D6984E86E81F5F2B5B7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1227AEEEE841EC1E99A2AB1995C48AEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2DFAD2EE2B3DCBFD34B59FA04AC1EEE7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5C76158E36CA688BA119007ACA1781CD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6C349DD9ED5A80D0DEDD1F16E3E4C2D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C66A0369E2E665C9C8CDC3D3C09A3DD</key>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1A618157EF7E907F481749E66E908AD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D3272C088A6BD544D2ACAE55C2A42363</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F794AF4CCA031958A0FE02E3EFEAA187</key>
+		<key>EBD44701A8DB65AAE253BB67863204E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -6,12 +6,26 @@
 //  Copyright © 2017 Albin CR. All rights reserved.
 //
 
+
+
+
+
 import UIKit
 import Quintype
+import Kingfisher
+import Toucan
+
+
+
+// Then pass it to the `setImage` methods:
 
 class HeaderCollectionCell: BaseCollectionCell {
     
-    
+    class func fileLocation(fileName:String) -> URL {
+        let path = NSURL(fileURLWithPath: NSTemporaryDirectory())
+        let fileURL = path.appendingPathComponent(fileName)
+        return fileURL!
+    }
     
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -24,25 +38,36 @@ class HeaderCollectionCell: BaseCollectionCell {
     
     override func configure(data: Any?) {
         
-        self.coverImageView.image = UIImage(named: "video")
+  
+    
+        let processor = ResizingImageProcessor(targetSize: CGSize(width: 100, height: 100))
+        self.coverImageView.kf.indicatorType = .activity
+
+        self.coverImageView.kf.setImage(with: URL(string: "https://media.giphy.com/media/ZofPKzPPkBa7K/giphy.gif")!, placeholder:  UIImage(named: "home"),options: [.transition(.flipFromLeft(1)),.processor(processor)])
+
+        
+        
+        
+        
         
         if let story = data as? Story{
             
             if let header = story.headline{ self.storyHeader.text = header }
             if let storySection = story.sections[0].name{ self.section.text = storySection }
             if let publishedDate = story.first_published_at{ self.date.text = publishedDate.convertTimeStampToDate }
-//            if let coverImage = story.
+            //            if let coverImage = story.
             
             
         }
         
-        
+
+
         
     }
     
     
-    var coverImageView:UIImageView = {
-        let imageView = UIImageView()
+    var coverImageView:AnimatedImageView = {
+        let imageView = AnimatedImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -144,7 +169,7 @@ class HeaderCollectionCell: BaseCollectionCell {
         self.bottomSocialBar.addSubview(bookMarkButton)
         self.bottomSocialBar.addSubview(shareButton)
         
-    
+        
         
         coverImageView.anchor(self.contentView.topAnchor, left: self.contentView.leftAnchor, bottom: self.contentView.bottomAnchor, right: self.contentView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 480)
         
@@ -155,7 +180,7 @@ class HeaderCollectionCell: BaseCollectionCell {
         sepratingBar.anchor(nil, left: self.leftAnchor, bottom: self.bottomSocialBar.topAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 15, bottomConstant: 0, rightConstant: 15, widthConstant: 0, heightConstant: 1)
         
         storyHeader.anchor(nil, left: self.leftAnchor, bottom: self.sepratingBar.topAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 15, bottomConstant: 15, rightConstant: 15, widthConstant: 0, heightConstant: 0)
-
+        
         section.anchor(nil, left: self.leftAnchor, bottom: storyHeader.topAnchor, right: nil, topConstant: 0, leftConstant: 15, bottomConstant: 10, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
         border.anchor(nil, left: self.section.leftAnchor, bottom: self.section.bottomAnchor, right: self.section.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -2, rightConstant: 0, widthConstant: section.bounds.width, heightConstant: Themes.DefaultThemes.HomeHeaderCell.sectionUnderlineHeight)

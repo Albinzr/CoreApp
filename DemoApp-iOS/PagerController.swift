@@ -30,16 +30,13 @@ class PagerController: BaseController,IndicatorInfoProvider {
         return collectionView
     }()
     
-    var storyCollectionArray:[Story] = []
-        {
+    var storyCollectionArray:[Story] = [] {
         
         didSet{
-
-                self.homeCollectionView.reloadData()
-                utility.hideActivityIndicatory(uiView: view)
-    
+            self.homeCollectionView.reloadData()
+            utility.hideActivityIndicatory(uiView: view)
+            
         }
-        
     }
     
     var tabName:String!
@@ -71,27 +68,26 @@ class PagerController: BaseController,IndicatorInfoProvider {
     
     override func loadData() {
         super.loadData()
-                utility.showActivityIndicatory(uiView: view)
-
+        
+        utility.showActivityIndicatory(uiView: view)
+    
+        if let slug =  menu?.section_slug{
             
-            if let slug =  menu?.section_slug{
+            Quintype.api.getStories(options: storiesOption.section(sectionName: slug), fields: nil, offset: nil, limit: nil, storyGroup: nil, cache: cacheOption.cacheToMemoryAndDiskWithTime(min: 3), Success: { (storyCollection) in
                 
-                Quintype.api.getStories(options: storiesOption.section(sectionName: slug), fields: nil, offset: nil, limit: nil, storyGroup: nil, cache: cacheOption.cacheToMemoryAndDiskWithTime(min: 3), Success: { (storyCollection) in
+                if let stories = storyCollection{
+                    self.storyCollectionArray = stories
                     
-                    if let stories = storyCollection{
-                        
-                        self.storyCollectionArray = stories
-                    }
-                    
-                }, Error: { (error) in
-                    
-                    print(error as Any)
-                    
-                })
-            }
+                }
+                
+            }, Error: { (error) in
+                
+                print(error as Any)
+                
+            })
+        }
         
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

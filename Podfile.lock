@@ -1,9 +1,13 @@
 PODS:
+  - Kingfisher (3.2.4)
   - Quintype (0.0.7)
+  - Toucan (0.6.0)
   - XLPagerTabStrip (5.0.0)
 
 DEPENDENCIES:
+  - Kingfisher (~> 3.0)
   - Quintype (from `https://github.com/Albinzr/Quintype.git`, tag `0.0.30`)
+  - Toucan (~> 0.6.0)
   - XLPagerTabStrip (from `https://github.com/KelvinJin/XLPagerTabStrip.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
@@ -23,9 +27,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/KelvinJin/XLPagerTabStrip.git
 
 SPEC CHECKSUMS:
+  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   Quintype: d451338e5157ae662aef0df15f40997c2ac7ab5d
+  Toucan: 47485bbc9cb4541ef6318d6886103e6eaf16e919
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: 18b738fdafa2939993f087c512b80095e1a21631
+PODFILE CHECKSUM: a18cca76b6ee19fb586153cdfead8c5c4131a2a1
 
 COCOAPODS: 1.1.1

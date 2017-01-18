@@ -89,30 +89,17 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        
-//        if (self.lastContentOffset > scrollView.contentOffset.y ) {
-//            
-//            self.navigationController?.setNavigationBarHidden(false, animated: true)
-//        }
-//        else if (self.lastContentOffset < scrollView.contentOffset.y) {
-//            
-//            if scrollView.contentOffset.y > UIScreen.main.bounds.height{
-//                self.navigationController?.setNavigationBarHidden(true, animated: true)
-//            }
-//            
-//        }
-//        // update the new position acquired
-//        self.lastContentOffset = scrollView.contentOffset.y
-        
         if(self.lastContentOffset > scrollView.contentOffset.y) &&
             self.lastContentOffset < (scrollView.contentSize.height - scrollView.frame.height) {
             // move up
-             self.navigationController?.setNavigationBarHidden(false, animated: true)
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
         }
         else if (self.lastContentOffset < scrollView.contentOffset.y
             && scrollView.contentOffset.y > 0) {
             // move down
-           self.navigationController?.setNavigationBarHidden(true, animated: true)        }
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            
+        }
         
         // update the new position acquired
         self.lastContentOffset = scrollView.contentOffset.y

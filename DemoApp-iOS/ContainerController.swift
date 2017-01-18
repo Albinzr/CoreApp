@@ -20,7 +20,7 @@ class ContainerController: ButtonBarPagerTabStripViewController{
     convenience init(singleMenu:[Menu]?){
         self.init()
         menu = singleMenu
-
+        
     }
     
     override func viewDidLoad() {
@@ -28,23 +28,29 @@ class ContainerController: ButtonBarPagerTabStripViewController{
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.selectedBarBackgroundColor = .red
         settings.style.buttonBarItemBackgroundColor = Themes.DefaultThemes.menu.tabarBackgroundColor
+        settings.style.buttonBarHeight = 60
         //
         super.viewDidLoad()
         
         initNavgationbarIcon()
         if Themes.DefaultThemes.menu.tabTextAnimation{ tabarAnimation() }
-        self.navigationItem.title = "..Home.."
+        
+        self.navigationItem.title = ""
         self.automaticallyAdjustsScrollViewInsets = false
         
         buttonBarView.backgroundColor = Themes.DefaultThemes.menu.tabarBackgroundColor
         buttonBarView.selectedBar.backgroundColor = Themes.DefaultThemes.menu.selectionBarBackground
     }
     
-
+    
     private func initNavgationbarIcon(){
-
+        
         let rightSearchBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action:  #selector(searchTapped(sender:)))
         self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
+    }
+    
+    func searchTapped(sender:AnyObject){
+        
     }
     
     private func tabarAnimation(){
@@ -68,32 +74,21 @@ class ContainerController: ButtonBarPagerTabStripViewController{
         }
     }
     
-    func searchTapped(sender:AnyObject){
-        
-    }
-
+    
+    
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
-        
         var viewControllerCollection:[UIViewController] = []
         
-        
         menu?.forEach({ (menu) in
-        
-    
+            
             let child_1 = PagerController(singleMenu: menu)
             child_1.viewDidLoad()
             child_1.view.backgroundColor = colorArray[Int(arc4random_uniform(UInt32(colorArray.count)))]
             viewControllerCollection.append(child_1)
-            
-            
         })
-            
-            
         
-    
-    
         return viewControllerCollection
     }
     
