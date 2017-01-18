@@ -82,11 +82,12 @@ class ContainerController: ButtonBarPagerTabStripViewController{
         var viewControllerCollection:[UIViewController] = []
         
         menu?.forEach({ (menu) in
-            
-            let child_1 = PagerController(singleMenu: menu)
+            print(menu.title!)
+            let child_1 = PagerController.init(singleMenu: menu)
             child_1.viewDidLoad()
             child_1.view.backgroundColor = colorArray[Int(arc4random_uniform(UInt32(colorArray.count)))]
             viewControllerCollection.append(child_1)
+            return
         })
         
         return viewControllerCollection

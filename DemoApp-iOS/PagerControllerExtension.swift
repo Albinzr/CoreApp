@@ -24,6 +24,7 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
             if storyCollectionArray.count > 0{
                 
                 currentCell?.configure(data:storyCollectionArray[indexPath.row])
+                print(storyCollectionArray[indexPath.row].headline!)
             }
             
         }else{
@@ -75,7 +76,7 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
     }
     
     //MARK: - Auto resize on rotation
@@ -88,6 +89,8 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        print(storyCollectionArray)
         
         if(self.lastContentOffset > scrollView.contentOffset.y) &&
             self.lastContentOffset < (scrollView.contentSize.height - scrollView.frame.height) {
@@ -105,4 +108,6 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
         self.lastContentOffset = scrollView.contentOffset.y
         
     }
+    
+    
 }

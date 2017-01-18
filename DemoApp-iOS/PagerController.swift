@@ -45,7 +45,6 @@ class PagerController: BaseController,IndicatorInfoProvider {
         super.init()
         tabName = singleMenu.title
         menu = singleMenu
-        
     }
     
     override func setupViews() {
@@ -71,14 +70,15 @@ class PagerController: BaseController,IndicatorInfoProvider {
         
         utility.showActivityIndicatory(uiView: view)
     
-        if let slug =  menu?.section_slug{
-            
-            Quintype.api.getStories(options: storiesOption.section(sectionName: slug), fields: nil, offset: nil, limit: nil, storyGroup: nil, cache: cacheOption.cacheToMemoryAndDiskWithTime(min: 3), Success: { (storyCollection) in
+        if let slug =  menu?.section_name{
+            print(slug)
+            Quintype.api.getStories(options: storiesOption.section(sectionName: slug), fields: nil, offset: nil, limit: nil, storyGroup: nil, cache: cacheOption.none, Success: { (storyCollection) in
                 
                 if let stories = storyCollection{
                     self.storyCollectionArray = stories
-                    
+                    print(stories[0].headline)
                 }
+             
                 
             }, Error: { (error) in
                 

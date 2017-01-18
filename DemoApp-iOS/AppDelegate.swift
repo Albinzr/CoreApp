@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Quintype.initWithBaseUrl(baseURL: "http://www.sakshipost.com")
+        Quintype.initWithBaseUrl(baseURL: "http://swarajyamag.com")
         
         loadInitialViewController()
     

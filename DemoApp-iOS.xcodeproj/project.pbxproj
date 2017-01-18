@@ -317,8 +317,8 @@
 		61FCE2B41E2CD194009DEFF6 /* Pager */ = {
 			isa = PBXGroup;
 			children = (
-				617FE52D1E275E9600E4D4B9 /* PagerControllerExtension.swift */,
 				61B056941E2C8E2C00974BED /* PagerController.swift */,
+				617FE52D1E275E9600E4D4B9 /* PagerControllerExtension.swift */,
 			);
 			name = Pager;
 			sourceTree = "<group>";

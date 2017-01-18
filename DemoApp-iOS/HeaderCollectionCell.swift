@@ -13,13 +13,63 @@
 import UIKit
 import Quintype
 import Kingfisher
-import Toucan
 
+
+enum imageType:String{
+    
+    case webp = "webp"
+    case gif = "gif"
+    
+    
+}
+
+extension UIImageView{
+    
+    public func loadImage(url:String,targetSize:CGSize,placeholder:UIImage? = nil,animation:ImageTransition = .none){
+        let url = url.replacingOccurrences(of: " ", with: "%20")
+        let convertedUrl = URL(string: url)
+        
+        if let mineType = url.components(separatedBy: ".").last?.lowercased(){
+            
+            switch mineType{
+                
+            case imageType.gif.rawValue :
+                self.kf.indicatorType = .activity
+                self.kf.setImage(with: convertedUrl, options: [.transition(animation)])
+                break
+                
+            case imageType.webp.rawValue :
+                
+                break
+                
+            default:
+                let resize = ResizingImageProcessor(targetSize: targetSize)
+                self.kf.indicatorType = .activity
+                self.kf.setImage(with: convertedUrl, placeholder: placeholder, options: [.transition(animation),.processor(resize)], completionHandler: { (image, error, cache, url) in
+                    
+                    print("got image",url)
+                    
+                })
+                
+                break
+                
+                
+            }
+        }
+        
+        
+    }
+    
+    
+}
 
 
 // Then pass it to the `setImage` methods:
 
 class HeaderCollectionCell: BaseCollectionCell {
+    
+    let imageBaseUrl = "http://" + (Quintype.publisherConfig?.cdn_image)! + "/"
+    
     
     class func fileLocation(fileName:String) -> URL {
         let path = NSURL(fileURLWithPath: NSTemporaryDirectory())
@@ -38,13 +88,6 @@ class HeaderCollectionCell: BaseCollectionCell {
     
     override func configure(data: Any?) {
         
-  
-    
-        let processor = ResizingImageProcessor(targetSize: CGSize(width: 100, height: 100))
-        self.coverImageView.kf.indicatorType = .activity
-
-        self.coverImageView.kf.setImage(with: URL(string: "https://media.giphy.com/media/ZofPKzPPkBa7K/giphy.gif")!, placeholder:  UIImage(named: "home"),options: [.transition(.flipFromLeft(1)),.processor(processor)])
-
         
         
         
@@ -52,23 +95,31 @@ class HeaderCollectionCell: BaseCollectionCell {
         
         if let story = data as? Story{
             
+            
+            
             if let header = story.headline{ self.storyHeader.text = header }
             if let storySection = story.sections[0].name{ self.section.text = storySection }
             if let publishedDate = story.first_published_at{ self.date.text = publishedDate.convertTimeStampToDate }
-            //            if let coverImage = story.
+            if let coverImage = story.hero_image_s3_key{
+                
+             self.coverImageView.loadImage(url: imageBaseUrl + coverImage, targetSize: CGSize(width: self.coverImageView.bounds.width, height: self.coverImageView.bounds.height))
+                
+            }
+            
+            
             
             
         }
         
-
-
+        
+        
         
     }
     
     
     var coverImageView:AnimatedImageView = {
         let imageView = AnimatedImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
@@ -171,7 +222,7 @@ class HeaderCollectionCell: BaseCollectionCell {
         
         
         
-        coverImageView.anchor(self.contentView.topAnchor, left: self.contentView.leftAnchor, bottom: self.contentView.bottomAnchor, right: self.contentView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 480)
+        coverImageView.anchor(self.contentView.topAnchor, left: self.contentView.leftAnchor, bottom: self.contentView.bottomAnchor, right: self.contentView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 414)
         
         alphaLayerForCoverImage.fillSuperview()
         

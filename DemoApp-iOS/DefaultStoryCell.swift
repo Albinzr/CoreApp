@@ -8,8 +8,11 @@
 
 import UIKit
 import Quintype
+import Kingfisher
 
 class DefaultStoryCell: BaseCollectionCell {
+    
+    let imageBaseUrl = "http://" + (Quintype.publisherConfig?.cdn_image)! + "/"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +32,11 @@ class DefaultStoryCell: BaseCollectionCell {
             if let header = story.headline{ self.storyheader.text = header }
             if let storySection = story.sections[0].name{ self.section.text = storySection }
             if let publishedDate = story.first_published_at{ self.date.text = publishedDate.convertTimeStampToDate }
+            if let coverImage = story.hero_image_s3_key{
+                
+                self.headerImageView.loadImage(url: imageBaseUrl + coverImage, targetSize: CGSize(width: self.headerImageView.bounds.width, height: self.headerImageView.bounds.height))
+                
+            }
             
             DispatchQueue.main.async {
                 let path = UIBezierPath(roundedRect:self.imageCoverView.bounds, byRoundingCorners:[.topRight, .topLeft], cornerRadii: CGSize(width: 15, height: 15))
@@ -63,7 +71,7 @@ class DefaultStoryCell: BaseCollectionCell {
     
     let headerImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
