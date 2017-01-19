@@ -11,7 +11,6 @@ target 'DemoApp-iOS'  do
  	
  	pod 'KingfisherWebP', git: 'https://github.com/yeatse/KingfisherWebP.git', :tag => '0.2.0'
 
-
 end
 
 
