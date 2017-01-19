@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DemoApp-iOS/HeaderCollectionCell.swift"
-            timestampString = "506428678.576949"
+            filePath = "Pods/Quintype/CoreiOS/http.swift"
+            timestampString = "506498191.453452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "loadImage(url:targetSize:placeholder:animation:)"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "call(method:urlString:parameter:Success:Error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DemoApp-iOS/HeaderCollectionCell.swift"
-            timestampString = "506428270.677057"
+            filePath = "Pods/Quintype/CoreiOS/http.swift"
+            timestampString = "506498176.276759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "loadImage(url:targetSize:placeholder:animation:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "call(method:urlString:parameter:Success:Error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DemoApp-iOS/HeaderCollectionCell.swift"
-            timestampString = "506428300.678406"
+            filePath = "Pods/Quintype/CoreiOS/ApiService.swift"
+            timestampString = "506499958.749192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "configure(data:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "getStories(options:fields:offset:limit:storyGroup:cache:Success:Error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Quintype/CoreiOS/ApiService.swift"
+            timestampString = "506499993.757026"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "getStories(options:fields:offset:limit:storyGroup:cache:Success:Error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

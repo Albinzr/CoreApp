@@ -81,7 +81,7 @@ public struct Themes{
             static let tabTextColor = UIColor.white
             static let tabTextAnimation = true
             static let selectionBarBackground = UIColor.red
-            static let tabarheight = CGFloat(30)
+            static let tabarheight = CGFloat(20)
             
         }
         

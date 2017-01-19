@@ -12,53 +12,12 @@
 
 import UIKit
 import Quintype
-import Kingfisher
 
 
 enum imageType:String{
     
     case webp = "webp"
     case gif = "gif"
-    
-    
-}
-
-extension UIImageView{
-    
-    public func loadImage(url:String,targetSize:CGSize,placeholder:UIImage? = nil,animation:ImageTransition = .none){
-        let url = url.replacingOccurrences(of: " ", with: "%20")
-        let convertedUrl = URL(string: url)
-        
-        if let mineType = url.components(separatedBy: ".").last?.lowercased(){
-            
-            switch mineType{
-                
-            case imageType.gif.rawValue :
-                self.kf.indicatorType = .activity
-                self.kf.setImage(with: convertedUrl, options: [.transition(animation)])
-                break
-                
-            case imageType.webp.rawValue :
-                
-                break
-                
-            default:
-                let resize = ResizingImageProcessor(targetSize: targetSize)
-                self.kf.indicatorType = .activity
-                self.kf.setImage(with: convertedUrl, placeholder: placeholder, options: [.transition(animation),.processor(resize)], completionHandler: { (image, error, cache, url) in
-                    
-                    print("got image",url)
-                    
-                })
-                
-                break
-                
-                
-            }
-        }
-        
-        
-    }
     
     
 }
@@ -117,8 +76,8 @@ class HeaderCollectionCell: BaseCollectionCell {
     }
     
     
-    var coverImageView:AnimatedImageView = {
-        let imageView = AnimatedImageView()
+    var coverImageView:UIImageView = {
+        let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         return imageView
     }()

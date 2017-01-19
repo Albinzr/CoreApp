@@ -8,7 +8,6 @@
 
 import UIKit
 import Quintype
-import Kingfisher
 
 class DefaultStoryCell: BaseCollectionCell {
     
