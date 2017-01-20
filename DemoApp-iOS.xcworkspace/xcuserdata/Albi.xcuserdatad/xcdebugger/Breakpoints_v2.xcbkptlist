@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DemoApp-iOS/PagerController.swift"
-            timestampString = "506427712.657169"
+            filePath = "DemoApp-iOS/PagerLayout.swift"
+            timestampString = "506624812.99968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "loadData()"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "makeLayout(stories:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Quintype/CoreiOS/ApiService.swift"
-            timestampString = "506499958.749192"
+            filePath = "DemoApp-iOS/PagerLayout.swift"
+            timestampString = "506624815.31204"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "getStories(options:fields:offset:limit:storyGroup:cache:Success:Error:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "makeLayouts(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Quintype/CoreiOS/ApiService.swift"
-            timestampString = "506499993.757026"
+            filePath = "DemoApp-iOS/PagerLayout.swift"
+            timestampString = "506624819.156484"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "getStories(options:fields:offset:limit:storyGroup:cache:Success:Error:)"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "makeLayout(stories:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

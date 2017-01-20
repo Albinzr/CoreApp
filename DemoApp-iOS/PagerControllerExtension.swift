@@ -15,19 +15,20 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         var cell : UICollectionViewCell?
-        
-        if indexPath.row == 0{
-            
+
+        switch self.layoutEngineArray[indexPath.section][indexPath.row].layoutType {
+        case .headerCollection:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierHeaderCollectionCell, for: indexPath) as!HeaderCollectionCell
             let currentCell = cell as?  HeaderCollectionCell
             
             if storyCollectionArray.count > 0{
                 
                 currentCell?.configure(data:storyCollectionArray[indexPath.row])
-                print(storyCollectionArray[indexPath.row].headline!)
+            
             }
             
-        }else{
+            break
+        case .defaultCollection:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierDefaultStoryCollectionCell, for: indexPath)
             
             let currentCell = cell as? DefaultStoryCell
@@ -35,22 +36,25 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
             if storyCollectionArray.count > 0{
                 currentCell?.configure(data:storyCollectionArray[indexPath.row])
             }
+            break
         }
         return cell!
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.storyCollectionArray.count
+        return self.layoutEngineArray[section].count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return self.layoutEngineArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if indexPath.row == 0{
+        switch self.layoutEngineArray[indexPath.section][indexPath.row].layoutType {
+        case .headerCollection:
+            
             let targetSize =  CGSize(width: self.homeCollectionView.bounds.width, height: self.homeCollectionView.bounds.width)
             let sizingCell:BaseCollectionCell?
             sizingCell = sizingCells[reuseIdentifierHeaderCollectionCell]
@@ -60,8 +64,8 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
             
             let calculatedSize = sizingCell?.calculateHeight(targetSize: targetSize)
             return calculatedSize!
+        case .defaultCollection:
             
-        }else{
             let targetSize =  CGSize(width: self.homeCollectionView.bounds.width, height: self.homeCollectionView.bounds.width)
             let sizingCell:BaseCollectionCell?
             sizingCell = sizingCells[reuseIdentifierDefaultStoryCollectionCell]
@@ -90,7 +94,6 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        print(storyCollectionArray)
         
         if(self.lastContentOffset > scrollView.contentOffset.y) &&
             self.lastContentOffset < (scrollView.contentSize.height - scrollView.frame.height) {

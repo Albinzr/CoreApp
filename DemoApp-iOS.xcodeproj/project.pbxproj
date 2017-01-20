@@ -17,6 +17,7 @@
 		614020551E307DAB0087CE9E /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614020541E307DAB0087CE9E /* UIImageViewExtension.swift */; };
 		614020571E30B5060087CE9E /* ContainerNavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614020561E30B5060087CE9E /* ContainerNavigationExtension.swift */; };
 		6140205A1E30BA040087CE9E /* StoryDetailsContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614020591E30BA040087CE9E /* StoryDetailsContainerController.swift */; };
+		6140205C1E3277890087CE9E /* PagerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6140205B1E3277890087CE9E /* PagerLayout.swift */; };
 		616FF7F41E1CD7BB00D3807D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF7F31E1CD7BB00D3807D /* CustomTabBarController.swift */; };
 		616FF8711E1D0A2400D3807D /* HomeContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32921E1BAFE10051790F /* HomeContainerController.swift */; };
 		616FF8731E1D0A2400D3807D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF7F31E1CD7BB00D3807D /* CustomTabBarController.swift */; };
@@ -45,7 +46,6 @@
 		61CB329D1E1BC0260051790F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB329C1E1BC0260051790F /* Constants.swift */; };
 		61CB329F1E1BC0670051790F /* ScreenOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB329E1E1BC0670051790F /* ScreenOption.swift */; };
 		61D5EFF81E250970002343F3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D5EFF71E250970002343F3 /* Theme.swift */; };
-		61E2CE011E2E3DB400E53E6B /* GIFResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E2CE001E2E3DB400E53E6B /* GIFResizer.swift */; };
 		61FA3A961E2385C7007BDBA8 /* BaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FA3A951E2385C7007BDBA8 /* BaseCollectionCell.swift */; };
 		70ADEE1954A9922DF7E47B50 /* Pods_DemoApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232AE8E1B7E95F6D07C027BD /* Pods_DemoApp_iOS.framework */; };
 		A614800A980D4A548BDC05C1 /* Pods_DemoApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A756AA5A8E9B5627C6B517 /* Pods_DemoApp_iOS.framework */; };
@@ -66,6 +66,7 @@
 		614020541E307DAB0087CE9E /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		614020561E30B5060087CE9E /* ContainerNavigationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerNavigationExtension.swift; sourceTree = "<group>"; };
 		614020591E30BA040087CE9E /* StoryDetailsContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailsContainerController.swift; sourceTree = "<group>"; };
+		6140205B1E3277890087CE9E /* PagerLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerLayout.swift; sourceTree = "<group>"; };
 		616FF7F31E1CD7BB00D3807D /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		616FF85E1E1D086600D3807D /* Pods_DemoApp_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_DemoApp_iOS.framework; path = "../../Library/Developer/Xcode/DerivedData/DemoApp-iOS-aqhxprsdggzegadecuwtoqslolxy/Build/Products/Debug-iphonesimulator/Pods_DemoApp_iOS.framework"; sourceTree = "<group>"; };
 		616FF86A1E1D08DF00D3807D /* Quintype.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quintype.framework; path = "../../Library/Developer/Xcode/DerivedData/DemoApp-iOS-aqhxprsdggzegadecuwtoqslolxy/Build/Products/Debug-iphonesimulator/Quintype/Quintype.framework"; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		61CB329C1E1BC0260051790F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		61CB329E1E1BC0670051790F /* ScreenOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenOption.swift; sourceTree = "<group>"; };
 		61D5EFF71E250970002343F3 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		61E2CE001E2E3DB400E53E6B /* GIFResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFResizer.swift; sourceTree = "<group>"; };
 		61FA3A951E2385C7007BDBA8 /* BaseCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionCell.swift; sourceTree = "<group>"; };
 		625F327DB53158F45968529D /* Pods-DemoApp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoApp-iOS/Pods-DemoApp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B07F3A0F753B003BA94C0BE1 /* Pods-DemoApp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoApp-iOS/Pods-DemoApp-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,7 +163,6 @@
 				611E7A991E1501B300966573 /* SystemFiles */,
 				616FF85D1E1D086600D3807D /* Frameworks */,
 				0CDD7D68E7CE211FC46D70B7 /* Pods */,
-				61E2CE001E2E3DB400E53E6B /* GIFResizer.swift */,
 			);
 			path = "DemoApp-iOS";
 			sourceTree = "<group>";
@@ -285,6 +284,7 @@
 			children = (
 				6198BA6B1E1FA1D90048731C /* HeaderCollectionCell.swift */,
 				618B9C801E23BA6C003273A5 /* DefaultStoryCell.swift */,
+				6140205B1E3277890087CE9E /* PagerLayout.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -538,6 +538,7 @@
 				61FA3A961E2385C7007BDBA8 /* BaseCollectionCell.swift in Sources */,
 				61CB329D1E1BC0260051790F /* Constants.swift in Sources */,
 				617FE5341E27B11000E4D4B9 /* ViewController.swift in Sources */,
+				6140205C1E3277890087CE9E /* PagerLayout.swift in Sources */,
 				617FE5301E2782D400E4D4B9 /* DateExtension.swift in Sources */,
 				617FE52E1E275E9600E4D4B9 /* PagerControllerExtension.swift in Sources */,
 				61D5EFF81E250970002343F3 /* Theme.swift in Sources */,
@@ -547,7 +548,6 @@
 				614020551E307DAB0087CE9E /* UIImageViewExtension.swift in Sources */,
 				61CB329F1E1BC0670051790F /* ScreenOption.swift in Sources */,
 				61B056951E2C8E2D00974BED /* PagerController.swift in Sources */,
-				61E2CE011E2E3DB400E53E6B /* GIFResizer.swift in Sources */,
 				6198BA641E1F66C50048731C /* BaseController.swift in Sources */,
 				611E7A881E15016D00966573 /* AppDelegate.swift in Sources */,
 			);

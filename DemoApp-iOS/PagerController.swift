@@ -21,6 +21,7 @@ class PagerController: BaseController,IndicatorInfoProvider {
     var limit:Int = 0
     var sizingCells:[String:BaseCollectionCell] = [:]
     var lastContentOffset: CGFloat = 0
+    var layoutEngineArray = [[Layout]]()
     
     let homeCollectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -69,16 +70,22 @@ class PagerController: BaseController,IndicatorInfoProvider {
         super.loadData()
         
         utility.showActivityIndicatory(uiView: view)
-    
+        
         if let slug =  menu?.section_name{
             print(slug)
             Quintype.api.getStories(options: storiesOption.section(sectionName: slug), fields: nil, offset: nil, limit: nil, storyGroup: nil, cache: cacheOption.none, Success: { (storyCollection) in
                 
                 if let stories = storyCollection{
-                    self.storyCollectionArray = stories
-                    print(stories[0].headline!)
+                    
+                    let layoutEngine = LayoutEngine(stories: stories)
+                    layoutEngine.makeLayouts(completion: { (layoutArray) in
+                        if layoutArray.count > 0{
+                            self.layoutEngineArray = layoutArray
+                            self.storyCollectionArray = stories
+                        }
+                    })
                 }
-             
+                
                 
             }, Error: { (error) in
                 
