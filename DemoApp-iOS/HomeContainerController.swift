@@ -11,9 +11,7 @@ import Quintype
 import XLPagerTabStrip
 
 
-class ContainerController: ButtonBarPagerTabStripViewController{
-    
-    var colorArray:[UIColor] = [.red,.blue,.green,.yellow,.orange,.brown]
+class HomeContainerController: ButtonBarPagerTabStripViewController{
     
     var menu:[Menu]?
     
@@ -28,31 +26,19 @@ class ContainerController: ButtonBarPagerTabStripViewController{
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.selectedBarBackgroundColor = .red
         settings.style.buttonBarItemBackgroundColor = Themes.DefaultThemes.menu.tabarBackgroundColor
-        settings.style.buttonBarHeight = 60
+    
         //
         super.viewDidLoad()
         
-        initNavgationbarIcon()
+        setupNavgationbar()
         if Themes.DefaultThemes.menu.tabTextAnimation{ tabarAnimation() }
-        
         self.navigationItem.title = ""
         self.automaticallyAdjustsScrollViewInsets = false
         
         buttonBarView.backgroundColor = Themes.DefaultThemes.menu.tabarBackgroundColor
         buttonBarView.selectedBar.backgroundColor = Themes.DefaultThemes.menu.selectionBarBackground
     }
-    
-    
-    private func initNavgationbarIcon(){
-        
-        let rightSearchBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action:  #selector(searchTapped(sender:)))
-        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
-    }
-    
-    func searchTapped(sender:AnyObject){
-        
-    }
-    
+
     private func tabarAnimation(){
         
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
@@ -85,7 +71,6 @@ class ContainerController: ButtonBarPagerTabStripViewController{
             print(menu.title!)
             let child_1 = PagerController.init(singleMenu: menu)
             child_1.viewDidLoad()
-            child_1.view.backgroundColor = colorArray[Int(arc4random_uniform(UInt32(colorArray.count)))]
             viewControllerCollection.append(child_1)
             return
         })

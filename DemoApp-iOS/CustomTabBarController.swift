@@ -23,7 +23,7 @@ class CustomTabBarController: UITabBarController {
             var currentMenuCollection =  menuArray?.filter({ (menu:Menu) -> Bool in return  menuArray?[i].id == menu.parent_id })
             
             currentMenuCollection?.append(menuArray![i])
-            let homeController = ContainerController(singleMenu:currentMenuCollection)
+            let homeController = HomeContainerController(singleMenu:currentMenuCollection)
             let homeNavigationController = UINavigationController(rootViewController: homeController)
             homeNavigationController.title = menuArray?[i].title
             homeNavigationController.tabBarItem.image = UIImage(named: "")

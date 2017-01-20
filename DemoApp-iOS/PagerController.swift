@@ -76,7 +76,7 @@ class PagerController: BaseController,IndicatorInfoProvider {
                 
                 if let stories = storyCollection{
                     self.storyCollectionArray = stories
-                    print(stories[0].headline)
+                    print(stories[0].headline!)
                 }
              
                 
