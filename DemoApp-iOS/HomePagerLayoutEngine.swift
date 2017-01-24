@@ -7,31 +7,14 @@
 //
 
 
-import Foundation
-import Quintype
 
-struct Layout{
-    
-    public enum LayoutType : String{
-        case headerCollection =  "headerCollectionCell"
-        case defaultCollection =  "defaultStoryCell"
-    }
-    
-//    var story:Story
-    var layoutType:LayoutType
-    
-    public init(layoutType:LayoutType){
-//        self.story = story
-        self.layoutType = layoutType
-    }
-}
 
 
 import Foundation
 import Quintype
 
 
-class LayoutEngine{
+class HomePagerLayoutEngine{
     
     var stories:[Story] = []
     
@@ -57,7 +40,7 @@ class LayoutEngine{
         self.stories = stories
     }
     
-     func makeLayouts(completion:@escaping (_ layouts:[[Layout]]) -> Void){
+     func makeLayouts(completion:@escaping (_ layouts:[[HomeLayout]]) -> Void){
         
 //        queue.addOperation { () -> Void in
             let layouts = makeLayout(stories: self.stories)
@@ -67,15 +50,15 @@ class LayoutEngine{
 //        }
     }
     
-    func makeLayout(stories:[Story]) -> [[Layout]]{
-        var layoutEngineArray = [[Layout]]()
-        var layoutArray = [Layout]()
+    func makeLayout(stories:[Story]) -> [[HomeLayout]]{
+        var layoutEngineArray = [[HomeLayout]]()
+        var layoutArray = [HomeLayout]()
         for (index,_) in stories.enumerated(){
             if index == 0{
-                let layout = Layout(layoutType: .headerCollection)
+                let layout = HomeLayout(layoutType: .headerCollection)
                 layoutArray.append(layout)
             }else{
-                let layout = Layout(layoutType: .defaultCollection)
+                let layout = HomeLayout(layoutType: .defaultCollection)
                 layoutArray.append(layout)
             }
         }

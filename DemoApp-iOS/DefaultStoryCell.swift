@@ -13,14 +13,7 @@ class DefaultStoryCell: BaseCollectionCell {
     
     let imageBaseUrl = "http://" + (Quintype.publisherConfig?.cdn_image)! + "/"
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
     
     override func configure(data: Any?) {
         

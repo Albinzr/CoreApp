@@ -78,45 +78,10 @@ class CustomTabBarController: UITabBarController {
         }
     }
 }
-//    override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        
-//        
-//        ///  for controller in self.viewControllers!{
-//        let controller = self.selectedViewController!
-//        print(controller)
-//        if controller.isMember(of: UINavigationController.self){
-//            let navController = controller as! UINavigationController
-//            //    controller.viewWillTransition(to: size, with: coordinator)
-//            for controllerd in (navController.viewControllers){
-//                print(controllerd)
-//                controller.viewWillTransition(to: size, with: coordinator)
-//            }
-//        }
-//        
-//        
-//        //  }
-//        /*   coordinator.animate(alongsideTransition: { (context) in
-//         
-//         
-//         }) { (context) in
-//         
-//         }
-//         
-//         super.viewWillTransition(to: size, with: coordinator)
-//         */
-//        // super.viewWillTransition(to: size, with: coordinator)
-//    }
-//
-//    
-//    
-//    func actionRefresh(){
-//        
-//    }
-//}
 
-//extension moreNavigationController{
-//
-//
-//
-//}
 
+extension UIView{
+    
+    
+    
+}

@@ -12,18 +12,20 @@ class BaseController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        setupViews()
+        NotificationCenter.default.addObserver(self, selector: #selector(BaseController.didEnterForeground(notification:)), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
         
     }
     
+    func didEnterForeground(notification:Notification){
+        self.navigationController?.isNavigationBarHidden = false
+    }
     
     override func viewDidLoad() {
-       self.automaticallyAdjustsScrollViewInsets = false
-          
+        self.automaticallyAdjustsScrollViewInsets = false
+        
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     public func setupViews(){
         
@@ -34,6 +36,14 @@ class BaseController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
 }

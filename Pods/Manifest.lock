@@ -1,37 +1,79 @@
 PODS:
   - Kingfisher (3.2.4)
+  - KingfisherWebP (0.2.0):
+    - Kingfisher (~> 3.0)
+    - libwebp
+  - libwebp (0.5.1):
+    - libwebp/core (= 0.5.1)
+    - libwebp/dec (= 0.5.1)
+    - libwebp/demux (= 0.5.1)
+    - libwebp/dsp (= 0.5.1)
+    - libwebp/enc (= 0.5.1)
+    - libwebp/mux (= 0.5.1)
+    - libwebp/utils (= 0.5.1)
+    - libwebp/webp (= 0.5.1)
+  - libwebp/core (0.5.1):
+    - libwebp/webp
+  - libwebp/dec (0.5.1):
+    - libwebp/core
+  - libwebp/demux (0.5.1):
+    - libwebp/core
+  - libwebp/dsp (0.5.1):
+    - libwebp/core
+  - libwebp/enc (0.5.1):
+    - libwebp/core
+  - libwebp/mux (0.5.1):
+    - libwebp/core
+  - libwebp/utils (0.5.1):
+    - libwebp/core
+  - libwebp/webp (0.5.1)
+  - MAGPagedScrollView (0.1.8)
   - Quintype (0.0.7)
-  - Toucan (0.6.0)
   - XLPagerTabStrip (5.0.0)
 
 DEPENDENCIES:
   - Kingfisher (~> 3.0)
-  - Quintype (from `https://github.com/Albinzr/Quintype.git`, tag `0.0.30`)
-  - Toucan (~> 0.6.0)
+  - KingfisherWebP (from `https://github.com/yeatse/KingfisherWebP.git`, tag `0.2.0`)
+  - MAGPagedScrollView (from `https://github.com/orazz/MAGPagedScrollView.git`, tag `0.1.8`)
+  - Quintype (from `https://github.com/Albinzr/Quintype.git`, tag `0.33`)
   - XLPagerTabStrip (from `https://github.com/KelvinJin/XLPagerTabStrip.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
+  KingfisherWebP:
+    :git: https://github.com/yeatse/KingfisherWebP.git
+    :tag: 0.2.0
+  MAGPagedScrollView:
+    :git: https://github.com/orazz/MAGPagedScrollView.git
+    :tag: 0.1.8
   Quintype:
     :git: https://github.com/Albinzr/Quintype.git
-    :tag: 0.0.30
+    :tag: '0.33'
   XLPagerTabStrip:
     :branch: swift3
     :git: https://github.com/KelvinJin/XLPagerTabStrip.git
 
 CHECKOUT OPTIONS:
+  KingfisherWebP:
+    :git: https://github.com/yeatse/KingfisherWebP.git
+    :tag: 0.2.0
+  MAGPagedScrollView:
+    :git: https://github.com/orazz/MAGPagedScrollView.git
+    :tag: 0.1.8
   Quintype:
     :git: https://github.com/Albinzr/Quintype.git
-    :tag: 0.0.30
+    :tag: '0.33'
   XLPagerTabStrip:
     :commit: 99e3cbd5e6b99bb6b1fdf25f4af58fe2e38ad308
     :git: https://github.com/KelvinJin/XLPagerTabStrip.git
 
 SPEC CHECKSUMS:
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
+  KingfisherWebP: 2cd15fbb1e1b54decda5914b886dbbcf9ba246e5
+  libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
+  MAGPagedScrollView: 5e3913ed00e9d2e57d8ed0a30cef38e0c4e57255
   Quintype: d451338e5157ae662aef0df15f40997c2ac7ab5d
-  Toucan: 47485bbc9cb4541ef6318d6886103e6eaf16e919
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: a18cca76b6ee19fb586153cdfead8c5c4131a2a1
+PODFILE CHECKSUM: 32130014dd93c4e652e6bab5e1296166739419e0
 
 COCOAPODS: 1.1.1

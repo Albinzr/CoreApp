@@ -1,23 +1,26 @@
 //
-//  HomeLayout.swift
+//  Layout.swift
 //  DemoApp-iOS
 //
-//  Created by Albin CR on 1/10/17.
+//  Created by Albin CR on 1/23/17.
 //  Copyright © 2017 Albin CR. All rights reserved.
 //
 
 import Foundation
+import Quintype
 
-public enum homeLayout:String{
+struct HomeLayout{
     
-    case TopFull = "topfull"
-    case TopRow = "toprow"
-    case Row = "Row"
-    case Header = "header"
-    case VideoCarousel = "videocarousel"
-    case GalleryCarousel = "gallerycarousel"
-    case MovieReview = "moviereview"
-    case Enterprise = "enterprise"
-    case VideoStories = "videosotries"
+    public enum LayoutType : String{
+        case headerCollection =  "headerCollectionCell"
+        case defaultCollection =  "defaultStoryCell"
+        
+    }
     
+    var layoutType:LayoutType
+    
+    public init(layoutType:LayoutType){
+        
+        self.layoutType = layoutType
+    }
 }

@@ -21,13 +21,14 @@ class PagerController: BaseController,IndicatorInfoProvider {
     var limit:Int = 0
     var sizingCells:[String:BaseCollectionCell] = [:]
     var lastContentOffset: CGFloat = 0
-    var layoutEngineArray = [[Layout]]()
+    var layoutEngineArray = [[HomeLayout]]()
     
     let homeCollectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.collectionViewLayout = layout
+        collectionView.scrollsToTop = false
         return collectionView
     }()
     
@@ -42,8 +43,8 @@ class PagerController: BaseController,IndicatorInfoProvider {
     
     var tabName:String!
     
-    init(singleMenu:Menu) {
-        super.init()
+   convenience init(singleMenu:Menu) {
+        self.init()
         tabName = singleMenu.title
         menu = singleMenu
     }
@@ -72,12 +73,12 @@ class PagerController: BaseController,IndicatorInfoProvider {
         utility.showActivityIndicatory(uiView: view)
         
         if let slug =  menu?.section_name{
-            print(slug)
+        
             Quintype.api.getStories(options: storiesOption.section(sectionName: slug), fields: nil, offset: nil, limit: nil, storyGroup: nil, cache: cacheOption.none, Success: { (storyCollection) in
                 
                 if let stories = storyCollection{
                     
-                    let layoutEngine = LayoutEngine(stories: stories)
+                    let layoutEngine = HomePagerLayoutEngine(stories: stories)
                     layoutEngine.makeLayouts(completion: { (layoutArray) in
                         if layoutArray.count > 0{
                             self.layoutEngineArray = layoutArray
@@ -104,15 +105,15 @@ class PagerController: BaseController,IndicatorInfoProvider {
         self.navigationController?.hidesBarsOnSwipe = true
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.isNavigationBarHidden = false
+//    }
+    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         
         return IndicatorInfo.init(title: tabName)
         
-    }
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

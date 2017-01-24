@@ -23,10 +23,10 @@ class HomeContainerController: ButtonBarPagerTabStripViewController{
     
     override func viewDidLoad() {
         // set up style before super view did load is executed
+        
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.selectedBarBackgroundColor = .red
         settings.style.buttonBarItemBackgroundColor = Themes.DefaultThemes.menu.tabarBackgroundColor
-    
         //
         super.viewDidLoad()
         
@@ -37,8 +37,11 @@ class HomeContainerController: ButtonBarPagerTabStripViewController{
         
         buttonBarView.backgroundColor = Themes.DefaultThemes.menu.tabarBackgroundColor
         buttonBarView.selectedBar.backgroundColor = Themes.DefaultThemes.menu.selectionBarBackground
+        
+        
     }
-
+    
+    
     private func tabarAnimation(){
         
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
@@ -89,8 +92,7 @@ class HomeContainerController: ButtonBarPagerTabStripViewController{
         }
         super.reloadPagerTabStripView()
     }
-    
-    
+
     
     
 }

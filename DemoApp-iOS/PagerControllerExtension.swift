@@ -11,6 +11,7 @@ import UIKit
 
 extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
+
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -77,12 +78,52 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
         }
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        
+        var slugArray = storyCollectionArray.map { (story) -> String in return story.slug! }
+        
+        let controller = StoryDetailContainerController(slugArray: slugArray, currentSlugPosition: indexPath.row)
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        var cell : UICollectionViewCell?
+        switch self.layoutEngineArray[indexPath.section][indexPath.row].layoutType {
+        case .headerCollection:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierHeaderCollectionCell, for: indexPath) as!HeaderCollectionCell
+            let currentCell = cell as?  HeaderCollectionCell
+            
+            if storyCollectionArray.count > 0{
+                
+                currentCell?.coverImageView.kf.cancelDownloadTask()
+                
+            }
+            
+            break
+        case .defaultCollection:
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierDefaultStoryCollectionCell, for: indexPath)
+            
+            let currentCell = cell as? DefaultStoryCell
+            
+            if storyCollectionArray.count > 0{
+                currentCell?.headerImageView.kf.cancelDownloadTask()
+            }
+            break
+        }
+       
+
+        
+    }
+ 
     //MARK: - Auto resize on rotation
     
     
@@ -91,6 +132,7 @@ extension PagerController:UICollectionViewDataSource,UICollectionViewDelegate,UI
         self.homeCollectionView.collectionViewLayout.invalidateLayout()
         self.homeCollectionView.reloadData()
     }
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
