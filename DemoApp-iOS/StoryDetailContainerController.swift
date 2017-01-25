@@ -7,72 +7,112 @@
 //
 
 import UIKit
-import XLPagerTabStrip
 
-
-
-class StoryDetailContainerController:ButtonBarPagerTabStripViewController {
+class StoryDetailContainerController:BaseController{
     
-    var colorArray:[UIColor] = [.red,.yellow,.green,.gray,.lightGray]
     
-    var currentStorySlugPosition:Int?
-    var slugCollectionArray:[String] = []
     
-    convenience init(slugArray:[String],currentSlugPosition:Int){
+    var slugCollection:[String]?
+    var currentPage:Int?
+    
+    convenience init(slugArray: [String], currentSlugPosition: Int) {
         self.init()
-        currentStorySlugPosition = currentSlugPosition
-        slugCollectionArray = slugArray
+        self.slugCollection = slugArray
+          self.currentPage = currentSlugPosition
     }
+    
+    var pageViewController:UIPageViewController = {
+        
+        let pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.horizontal, options: nil)
+        return pageViewController
+        
+    }()
     
     override func viewDidLoad() {
-        
-        // set up style before super view did load is executed
-        settings.style.buttonBarHeight = 0
-        settings.style.selectedBarHeight = 0
-        //
         super.viewDidLoad()
-        view.backgroundColor = .white
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.title = ""
-        self.automaticallyAdjustsScrollViewInsets = false
         
-        buttonBarView.backgroundColor = Themes.DefaultThemes.menu.tabarBackgroundColor
-        buttonBarView.selectedBar.backgroundColor = Themes.DefaultThemes.menu.selectionBarBackground
-        NotificationCenter.default.addObserver(self, selector: #selector(StoryDetailContainerController.didEnterForeground(notification:)), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
+        
+        pageViewController.dataSource = self
+        pageViewController.delegate = self
+        
+        let startingViewController = self.loadViewControllerAtIndex(index: currentPage!) as! StoryDetailPager
+        let viewControllers = [startingViewController]
+        
+        pageViewController.setViewControllers(viewControllers, direction:UIPageViewControllerNavigationDirection.forward, animated:false, completion:nil)
+        pageViewController.view.frame = self.view.frame
+        
+        self.addChildViewController(pageViewController)
+        self.view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParentViewController: self)
+        self.edgesForExtendedLayout = []
+        self.navigationController?.hidesBarsOnSwipe = false
+        
         
     }
     
-    func didEnterForeground(notification:Notification){
-        
-        self.navigationController?.isNavigationBarHidden = false
-        
-    }
     
-    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+    
+    
+}
+
+
+extension StoryDetailContainerController:UIPageViewControllerDataSource,UIPageViewControllerDelegate{
+    
+    
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        var viewControllerCollection:[UIViewController] = []
+        let vc = viewController as? StoryDetailPager
+        var index = vc?.pageIndex
         
-        for (index,value) in slugCollectionArray.enumerated(){
-            let viewController = StoryDetailPager()
-            viewController.view.backgroundColor = colorArray[Int(arc4random_uniform(UInt32(colorArray.count)))]
-            viewControllerCollection.append(viewController)
-            print(index)
+        if (index == NSNotFound ){
+            
+            return nil
         }
         
-        return viewControllerCollection
-    }
-    
-    
-    override func reloadPagerTabStripView() {
+        index = index! + 1
         
-        if arc4random() % 2 == 0 {
-            pagerBehaviour = .progressive(skipIntermediateViewControllers: arc4random() % 2 == 0 , elasticIndicatorLimit: arc4random() % 2 == 0 )
+        if (index == self.slugCollection?.count){
+            
+            return nil
         }
-        else {
-            pagerBehaviour = .common(skipIntermediateViewControllers: arc4random() % 2 == 0)
-        }
-        super.reloadPagerTabStripView()
+        
+        return loadViewControllerAtIndex(index: index!)
+        
+        
+        
     }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
+        let vc = viewController as? StoryDetailPager
+        var index = vc?.pageIndex
+        
+        if (index == 0 || index == NSNotFound){
+            
+            return nil
+        }
+        
+        index = index! - 1
+        
+        
+        return loadViewControllerAtIndex(index: index!)
+        
+        
+    }
+    
+    func loadViewControllerAtIndex(index: Int) -> UIViewController{
+        
+        
+        
+        let newController = StoryDetailPager(slug: (slugCollection?[index])!, Index: index)
+        
+        
+        return newController
+        
+    }
+    
+    
     
     
 }

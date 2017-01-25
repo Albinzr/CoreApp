@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MAGPagedScrollView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-DemoApp-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,22 +42,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09972A4DC9C6C7E058E6FDD071B5CF47</key>
+		<key>3D56C7805DDF554755BDE9EE7A6EC422</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1CD6484CCA2BE77A04CC386847050BC4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>88AC10BA4FD9C790943DFDC1581C1121</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BEFAFC8C293A7B6246C9D819579654B6</key>
+		<key>602F58E3B50AC0741C4FBDFF2F06C761</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,12 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4F8771DEBFC1BBA41115CB840F2EC92</key>
+		<key>C8CFE1DAAD14721CDE015706879A09D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>CD219413B59AD8B0A7ACDEC166DB1837</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED59EB144E2539141E9D354D79223871</key>
 		<dict>
 			<key>primary</key>
 			<true/>

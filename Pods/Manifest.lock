@@ -27,14 +27,12 @@ PODS:
   - libwebp/utils (0.5.1):
     - libwebp/core
   - libwebp/webp (0.5.1)
-  - MAGPagedScrollView (0.1.8)
   - Quintype (0.0.7)
   - XLPagerTabStrip (5.0.0)
 
 DEPENDENCIES:
   - Kingfisher (~> 3.0)
   - KingfisherWebP (from `https://github.com/yeatse/KingfisherWebP.git`, tag `0.2.0`)
-  - MAGPagedScrollView (from `https://github.com/orazz/MAGPagedScrollView.git`, tag `0.1.8`)
   - Quintype (from `https://github.com/Albinzr/Quintype.git`, tag `0.33`)
   - XLPagerTabStrip (from `https://github.com/KelvinJin/XLPagerTabStrip.git`, branch `swift3`)
 
@@ -42,9 +40,6 @@ EXTERNAL SOURCES:
   KingfisherWebP:
     :git: https://github.com/yeatse/KingfisherWebP.git
     :tag: 0.2.0
-  MAGPagedScrollView:
-    :git: https://github.com/orazz/MAGPagedScrollView.git
-    :tag: 0.1.8
   Quintype:
     :git: https://github.com/Albinzr/Quintype.git
     :tag: '0.33'
@@ -56,9 +51,6 @@ CHECKOUT OPTIONS:
   KingfisherWebP:
     :git: https://github.com/yeatse/KingfisherWebP.git
     :tag: 0.2.0
-  MAGPagedScrollView:
-    :git: https://github.com/orazz/MAGPagedScrollView.git
-    :tag: 0.1.8
   Quintype:
     :git: https://github.com/Albinzr/Quintype.git
     :tag: '0.33'
@@ -70,10 +62,9 @@ SPEC CHECKSUMS:
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   KingfisherWebP: 2cd15fbb1e1b54decda5914b886dbbcf9ba246e5
   libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
-  MAGPagedScrollView: 5e3913ed00e9d2e57d8ed0a30cef38e0c4e57255
   Quintype: d451338e5157ae662aef0df15f40997c2ac7ab5d
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: 32130014dd93c4e652e6bab5e1296166739419e0
+PODFILE CHECKSUM: 6697cadcee30506f59ad12212ee08db079699491
 
 COCOAPODS: 1.1.1

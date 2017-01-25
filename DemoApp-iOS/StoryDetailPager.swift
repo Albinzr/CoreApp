@@ -7,17 +7,18 @@
 //
 
 import UIKit
-import XLPagerTabStrip
 
-class StoryDetailPager: BaseController,IndicatorInfoProvider {
+class StoryDetailPager: BaseController {
     
     let reuseIdentifierDefaultStoryCollectionCell = "defaultStoryCell"
     let screenSize = UIScreen.main.bounds
+    var pageIndex:Int?
+    var currentSlug:String?
     
-    convenience init(slug:String) {
+    convenience init(slug:String,Index:Int) {
         self.init()
-        
-
+        pageIndex = Index
+        currentSlug = slug
     }
     
     let homeCollectionView:UICollectionView = {
@@ -28,7 +29,7 @@ class StoryDetailPager: BaseController,IndicatorInfoProvider {
         collectionView.scrollsToTop = false
         return collectionView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,14 +40,9 @@ class StoryDetailPager: BaseController,IndicatorInfoProvider {
         homeCollectionView.backgroundColor = UIColor.white
         homeCollectionView.register(DefaultStoryCell.self, forCellWithReuseIdentifier: reuseIdentifierDefaultStoryCollectionCell)
         
-    
+        
+        
     }
+    
 
-    
-    
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        
-        return ""
-        
-    }
-  }
+}

@@ -53,9 +53,15 @@ extension UIImageView{
                 
             }
         }
-        
-        
     }
+}
+
+extension UIViewController{
     
+    public func clearUnusedImagesfromCache(){
+        
+        ImageCache.default.clearMemoryCache()
+        ImageCache.default.cleanExpiredDiskCache()
+    }
     
 }
