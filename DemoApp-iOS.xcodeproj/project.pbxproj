@@ -32,6 +32,7 @@
 		6198BA671E1F9A160048731C /* Ancher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198BA661E1F9A160048731C /* Ancher.swift */; };
 		6198BA6C1E1FA1D90048731C /* HeaderCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198BA6B1E1FA1D90048731C /* HeaderCollectionCell.swift */; };
 		61B056951E2C8E2D00974BED /* PagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B056941E2C8E2C00974BED /* PagerController.swift */; };
+		61BB873D1E3B10370078512B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BB873C1E3B10370078512B /* Queue.swift */; };
 		61CB32931E1BAFE10051790F /* HomeContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32921E1BAFE10051790F /* HomeContainerController.swift */; };
 		61CB32951E1BB2DA0051790F /* QuintypeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB32941E1BB2DA0051790F /* QuintypeUtility.swift */; };
 		61CB329D1E1BC0260051790F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CB329C1E1BC0260051790F /* Constants.swift */; };
@@ -52,7 +53,6 @@
 		611E7A911E15016D00966573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		611E7A931E15016D00966573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		611E7B031E1A44B600966573 /* HtmlRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlRender.swift; sourceTree = "<group>"; };
-		613AA8681E28D8CD0017502B /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		614020541E307DAB0087CE9E /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		614020561E30B5060087CE9E /* HomeContainerNavigationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContainerNavigationExtension.swift; sourceTree = "<group>"; };
 		614020591E30BA040087CE9E /* StoryDetailContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailContainerController.swift; sourceTree = "<group>"; };
@@ -75,6 +75,7 @@
 		6198BA661E1F9A160048731C /* Ancher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ancher.swift; sourceTree = "<group>"; };
 		6198BA6B1E1FA1D90048731C /* HeaderCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionCell.swift; sourceTree = "<group>"; };
 		61B056941E2C8E2C00974BED /* PagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerController.swift; sourceTree = "<group>"; };
+		61BB873C1E3B10370078512B /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		61CB32921E1BAFE10051790F /* HomeContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContainerController.swift; sourceTree = "<group>"; };
 		61CB32941E1BB2DA0051790F /* QuintypeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuintypeUtility.swift; sourceTree = "<group>"; };
 		61CB329C1E1BC0260051790F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -118,6 +119,9 @@
 				614317251E35E495004EC363 /* CollectionViewController.swift */,
 				617FE5331E27B11000E4D4B9 /* ViewController.swift */,
 				611E7A861E15016D00966573 /* DemoApp-iOS */,
+				616FF8521E1D076200D3807D /* DefaultThemes */,
+				611E7AFC1E15248E00966573 /* Helpers */,
+				611E7AFB1E15248600966573 /* Fonts */,
 				616FF8511E1D074D00D3807D /* Test */,
 				616FF8881E1D0A2400D3807D /* DemoApp-iOS copy-Info.plist */,
 				8C7A6AD1E1114CAD9BE11F9C /* Pods */,
@@ -139,12 +143,9 @@
 			children = (
 				61CB32971E1BBD7D0051790F /* Segueways */,
 				61FA3A921E238583007BDBA8 /* BaseComponents */,
-				616FF8521E1D076200D3807D /* DefaultThemes */,
 				616FF7F21E1CD79900D3807D /* Tabar */,
 				611E7AFD1E15270000966573 /* ViewController */,
 				611E7AFE1E152FD600966573 /* Extensions */,
-				611E7AFC1E15248E00966573 /* Helpers */,
-				611E7AFB1E15248600966573 /* Fonts */,
 				611E7A991E1501B300966573 /* SystemFiles */,
 				616FF85D1E1D086600D3807D /* Frameworks */,
 				0CDD7D68E7CE211FC46D70B7 /* Pods */,
@@ -171,15 +172,17 @@
 			children = (
 			);
 			name = Fonts;
+			path = "DemoApp-iOS";
 			sourceTree = "<group>";
 		};
 		611E7AFC1E15248E00966573 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				613AA8671E28D8B80017502B /* Pager */,
+				61BB873B1E3B10280078512B /* Queue */,
 				61CB32961E1BBD6E0051790F /* Utility */,
 			);
 			name = Helpers;
+			path = "DemoApp-iOS";
 			sourceTree = "<group>";
 		};
 		611E7AFD1E15270000966573 /* ViewController */ = {
@@ -210,14 +213,6 @@
 				611E7A891E15016D00966573 /* InitialController.swift */,
 			);
 			name = Initial;
-			sourceTree = "<group>";
-		};
-		613AA8671E28D8B80017502B /* Pager */ = {
-			isa = PBXGroup;
-			children = (
-				613AA8681E28D8CD0017502B /* CAPSPageMenu.swift */,
-			);
-			name = Pager;
 			sourceTree = "<group>";
 		};
 		614020581E30B5CB0087CE9E /* StroyDetailContainer */ = {
@@ -260,6 +255,7 @@
 				61D5EFF71E250970002343F3 /* Theme.swift */,
 			);
 			name = DefaultThemes;
+			path = "DemoApp-iOS";
 			sourceTree = "<group>";
 		};
 		616FF85D1E1D086600D3807D /* Frameworks */ = {
@@ -289,6 +285,14 @@
 				618B9C801E23BA6C003273A5 /* DefaultStoryCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		61BB873B1E3B10280078512B /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				61BB873C1E3B10370078512B /* Queue.swift */,
+			);
+			name = Queue;
 			sourceTree = "<group>";
 		};
 		61CB328F1E1BAFB80051790F /* Home Continer */ = {
@@ -512,6 +516,7 @@
 				61CB329D1E1BC0260051790F /* Constants.swift in Sources */,
 				617FE5341E27B11000E4D4B9 /* ViewController.swift in Sources */,
 				6140205C1E3277890087CE9E /* HomePagerLayoutEngine.swift in Sources */,
+				61BB873D1E3B10370078512B /* Queue.swift in Sources */,
 				617FE5301E2782D400E4D4B9 /* DateExtension.swift in Sources */,
 				617FE52E1E275E9600E4D4B9 /* PagerControllerExtension.swift in Sources */,
 				61D5EFF81E250970002343F3 /* Theme.swift in Sources */,

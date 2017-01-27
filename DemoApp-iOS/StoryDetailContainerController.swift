@@ -103,11 +103,7 @@ extension StoryDetailContainerController:UIPageViewControllerDataSource,UIPageVi
     
     func loadViewControllerAtIndex(index: Int) -> UIViewController{
         
-        
-        
         let newController = StoryDetailPager(slug: (slugCollection?[index])!, Index: index)
-        
-        
         return newController
         
     }
