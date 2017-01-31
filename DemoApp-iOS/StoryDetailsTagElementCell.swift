@@ -87,7 +87,6 @@ class StoryDetailsTagElementCell: BaseCollectionCell {
             }
             
             
-            
             if index == tags.count - 1{
 
                 
