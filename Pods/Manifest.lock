@@ -33,7 +33,7 @@ PODS:
 DEPENDENCIES:
   - Kingfisher (~> 3.0)
   - KingfisherWebP (from `https://github.com/yeatse/KingfisherWebP.git`, tag `0.2.0`)
-  - Quintype (from `https://github.com/Albinzr/Quintype.git`, tag `0.33`)
+  - Quintype (from `https://github.com/Albinzr/Quintype.git`, tag `0.34`)
   - XLPagerTabStrip (from `https://github.com/KelvinJin/XLPagerTabStrip.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
@@ -42,7 +42,7 @@ EXTERNAL SOURCES:
     :tag: 0.2.0
   Quintype:
     :git: https://github.com/Albinzr/Quintype.git
-    :tag: '0.33'
+    :tag: '0.34'
   XLPagerTabStrip:
     :branch: swift3
     :git: https://github.com/KelvinJin/XLPagerTabStrip.git
@@ -53,7 +53,7 @@ CHECKOUT OPTIONS:
     :tag: 0.2.0
   Quintype:
     :git: https://github.com/Albinzr/Quintype.git
-    :tag: '0.33'
+    :tag: '0.34'
   XLPagerTabStrip:
     :commit: 99e3cbd5e6b99bb6b1fdf25f4af58fe2e38ad308
     :git: https://github.com/KelvinJin/XLPagerTabStrip.git
@@ -65,6 +65,6 @@ SPEC CHECKSUMS:
   Quintype: d451338e5157ae662aef0df15f40997c2ac7ab5d
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: 6697cadcee30506f59ad12212ee08db079699491
+PODFILE CHECKSUM: 01bfd49a0944b803836b13cf90b7b001214c0420
 
 COCOAPODS: 1.1.1

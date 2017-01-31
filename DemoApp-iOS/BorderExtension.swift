@@ -18,4 +18,12 @@ extension CALayer {
         mask = shape
     }
 }
+
+extension String {
+    func getWidthOfString(with font: UIFont) -> CGFloat {
+        let attributes = [NSFontAttributeName : font]
+        
+        return NSAttributedString(string: self.capitalized, attributes: attributes).size().width
+    }
     
+}

@@ -7,13 +7,13 @@
 //
 
 import UIKit
+//import Quintype
 
 class StoryDetailContainerController:BaseController{
-    
-    
-    
+
     var slugCollection:[String]?
     var currentPage:Int?
+//    var storyDataStorage:[Int:Story] = [:]
     
     convenience init(slugArray: [String], currentSlugPosition: Int) {
         self.init()
@@ -32,6 +32,7 @@ class StoryDetailContainerController:BaseController{
         super.viewDidLoad()
         
         
+        pageViewController.isDoubleSided = true
         pageViewController.dataSource = self
         pageViewController.delegate = self
         
@@ -47,12 +48,7 @@ class StoryDetailContainerController:BaseController{
         self.edgesForExtendedLayout = []
         self.navigationController?.hidesBarsOnSwipe = false
         
-        
-    }
-    
-    
-    
-    
+    }    
 }
 
 
@@ -108,7 +104,22 @@ extension StoryDetailContainerController:UIPageViewControllerDataSource,UIPageVi
         
     }
     
-    
+//    func loadAndStoreStories(index:Int){
+//        
+//        
+////        Quintype.api.getStoryFromSlug(slug: currentSlug!, cache: cacheOption.none, Success: { (story) in
+////            
+////            
+////            print(story!)
+////            
+////        }) { (error) in
+////            
+////            print(error!)
+////            
+////        }
+//        
+//        
+//    }
     
     
 }

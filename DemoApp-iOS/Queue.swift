@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum GCD {
+public enum Queue {
     case main
     case background
     case userInteractive
@@ -37,166 +37,151 @@ public enum GCD {
     }
 }
 
+import Foundation
 
-public typealias QueueNextClosure = ((AnyObject?) -> QueueResult)
-public typealias QueueErrorClosure = ((Error) -> Void)
-public typealias QueueCompletionClosure = ((AnyObject?) -> Void)
-public typealias QueueCancelClosure = ((Void) -> Void)
+public typealias Closure = ((Any?) -> Any?)
+public typealias StartClosure = ((Void) -> Any?)
+public typealias CompletionClosure = ((Any?) -> Void)
 
-public enum QueueType {
+// MARK: - Task Class
+public final class Task {
     
-    case next(closure: QueueNextClosure)
-    case error(closure: QueueErrorClosure)
-    case completion(closure: QueueCompletionClosure)
-    case cancel(closure: QueueCancelClosure)
+    fileprivate let closure: Closure
+    fileprivate let queue: Queue
+    fileprivate let previousTask: Task?
     
-    var isNextType: Bool {
-        if case .next(_) = self { return true }
-        return false
-    }
-}
-
-public enum QueueResult {
-    
-    case next(result: AnyObject?)
-    case retry(result: AnyObject?)
-    case back(result: AnyObject?)
-    case restart(result: AnyObject?)
-    case error(Error: Error)
-    case finish(result: AnyObject?)
-    case cancel
-}
-
-public final class Queue {
-    
-    fileprivate var elements: [QueuePoint] = []
-    
-    fileprivate func nextPoints() -> [QueuePoint] {
-        return self.elements.filter() { $0.type.isNextType }
+    fileprivate init(_ queue: Queue, _ previousTask: Task? = nil, _ closure: @escaping Closure) {
+        self.closure = closure
+        self.queue = queue
+        self.previousTask = previousTask
     }
     
-    fileprivate func queuePointsAtIndex(_ index: Int) -> QueuePoint? {
-        return self.nextPoints()
-            .enumerated()
-            .filter() { $0.offset == index }
-            .map() { return $0.element }
-            .first
-    }
-    
-    fileprivate func previousQueuePoint(_ currentQueuePoint: QueuePoint) -> QueuePoint? {
-        let index = self.nextPoints()
-            .enumerated()
-            .filter() { $0.element === currentQueuePoint }
-            .map() { return $0.offset - 1 }
-            .first
+    fileprivate func runTask(_ next: @escaping Closure) -> Closure? {
+        let _closure = self.closure
+        let _queue = self.queue.queue
         
-        return index != nil ? self.queuePointsAtIndex(index!) : nil
-    }
-    
-    fileprivate func nextQueuePoint(_ currentQueuePoint: QueuePoint) -> QueuePoint? {
-        let index = self.nextPoints()
-            .enumerated()
-            .filter() { $0.element === currentQueuePoint }
-            .map() { return $0.offset + 1 }
-            .first
-        
-        return index != nil ? self.queuePointsAtIndex(index!) : nil
-    }
-    
-    fileprivate func runCompletion(_ obj: AnyObject?) {
-        self.elements.forEach() { if case .completion(let f) = $0.type { $0.gcd.queue.async { f(obj) } }}
-    }
-    
-    fileprivate func queue(_ previousResult: QueueResult, _ previousQueuePoint: QueuePoint?) {
-        let queuePoint = previousQueuePoint ?? self.queuePointsAtIndex(0)
-        guard let _queuePoint = queuePoint else {
-            self.runCompletion(nil)
-            return
-        }
-        
-        switch previousResult {
-        case .next(let result):
-            guard let _nextQueuePoint = self.nextQueuePoint(_queuePoint) else {
-                self.runCompletion(result)
-                return
+        if let _previousTask = self.previousTask {
+            return _previousTask.runTask { result in
+                _queue.async { _ = next(_closure(result)) }
+                return nil
             }
-            if case .next(let f) = _nextQueuePoint.type { _nextQueuePoint.gcd.queue.async { self.queue(f(result), _nextQueuePoint) }}
-        case .retry(let result):
-            if case .next(let f) = _queuePoint.type { _queuePoint.gcd.queue.async { self.queue(f(result), _queuePoint) }}
-        case .back(let result):
-            guard let _nextQueuePoint = self.previousQueuePoint(_queuePoint) else {
-                self.runCompletion(result)
-                return
-            }
-            if case .next(let f) = _nextQueuePoint.type { _nextQueuePoint.gcd.queue.async { self.queue(f(result), _nextQueuePoint) } }
-        case .restart(let result):
-            self.queue(.retry(result: result), nil)
-        case .error(let error):
-            self.elements.forEach() { if case .error(let f) = $0.type { $0.gcd.queue.async { f(error) } }}
-            self.runCompletion(nil)
-        case .finish(let result):
-            self.runCompletion(result)
-        case .cancel:
-            self.elements.forEach() { if case .cancel(let f) = $0.type { $0.gcd.queue.async { f() } }}
-            self.runCompletion(nil)
+        } else {
+            _queue.async { _ = next(_closure(nil)) }
+            return nil
         }
     }
 }
 
-// MARK: - QueuePoint
-
-private final class QueuePoint {
+// MARK: - Run Task
+extension Task {
     
-    fileprivate let gcd: GCD
-    fileprivate let type: QueueType
-    
-    fileprivate init(_ gcd: GCD, _ type: QueueType) {
-        self.gcd = gcd
-        self.type = type
+    public final func run(_ queue: Queue? = nil, _ completion: CompletionClosure? = nil) {
+        let _queue = queue?.queue ?? self.queue.queue
+        _ = self.runTask { result in
+            _queue.async { completion?(result) }
+            return nil
+        }
     }
 }
 
-// MARK: - Queue away
-
-extension Queue {
+// MARK: - Static Functions
+extension Task {
     
-    public final func queue(_ obj: AnyObject? = nil) {
-        self.queue(.retry(result: obj), nil)
+    public static func main(_ closure: @escaping StartClosure) -> Task {
+        return Task(Queue.main, nil, { _ in return closure() })
+    }
+    
+    public static func background(_ closure: @escaping StartClosure) -> Task {
+        return Task(Queue.background, nil, { _ in return closure() })
+    }
+    
+    public static func userInteractive(_ closure: @escaping StartClosure) -> Task {
+        return Task(Queue.userInteractive, nil, { _ in return closure() })
+    }
+    
+    public static func userInitiated(_ closure: @escaping StartClosure) -> Task {
+        return Task(Queue.userInitiated, nil, { _ in return closure() })
+    }
+    
+    public static func utility(_ closure: @escaping StartClosure) -> Task {
+        return Task(Queue.utility, nil, { _ in return closure() })
+    }
+    
+    public static func onDefault(_ closure: @escaping StartClosure) -> Task {
+        return Task(Queue.default, nil, { _ in return closure() })
+    }
+    
+    public static func custom(_ queue: DispatchQueue, _ closure: @escaping StartClosure) -> Task {
+        return Task(Queue.custom(queue: queue), nil, { _ in return closure() })
+    }
+    
+    public static func after(_ queue: Queue = Queue.background, seconds: Double, _ closure: @escaping StartClosure) -> Task {
+        return Task(queue, nil) { _ in
+            Task.waitBlock(seconds)()
+            return closure()
+        }
+    }
+    
+    public static func wait(_ queue: Queue = Queue.background, seconds: Double, _ closure: StartClosure) -> Task {
+        return Task(queue, nil) { _ in
+            Task.waitBlock(seconds)()
+            return nil
+        }
+    }
+    
+    fileprivate static func waitBlock(_ seconds: Double) -> ((Void) -> Void) {
+        return {
+            let nanoSeconds = Int64(seconds * Double(NSEC_PER_SEC))
+            let time = DispatchTime.now() + Double(nanoSeconds) / Double(NSEC_PER_SEC)
+            
+            let sem = DispatchSemaphore(value: 0)
+            _ = sem.wait(timeout: time)
+        }
     }
 }
 
-// MARK: - Queue Static Functions
-
-extension Queue {
+// MARK: - Instance Functions
+extension Task {
     
-    public static func onFirst(_ gcd: GCD = GCD.main, closure: @escaping QueueNextClosure) -> Queue {
-        let queue = Queue()
-        queue.elements.append(QueuePoint(gcd, .next(closure: closure)))
-        return queue
-    }
-}
-
-// MARK: - Queue Instance Functions
-
-extension Queue {
-    
-    public final func onNext(_ gcd: GCD = GCD.main, _ closure: @escaping QueueNextClosure) -> Queue {
-        self.elements.append(QueuePoint(gcd, .next(closure: closure)))
-        return self
+    public final func main(_ closure: @escaping Closure) -> Task {
+        return Task(Queue.main, self, closure)
     }
     
-    public final func onError(_ gcd: GCD = GCD.main, _ closure: @escaping QueueErrorClosure) -> Queue {
-        self.elements.append(QueuePoint(gcd, .error(closure: closure)))
-        return self
+    public final func background(_ closure: @escaping Closure) -> Task {
+        return Task(Queue.background, self, closure)
     }
     
-    public final func onComplete (_ gcd: GCD = GCD.main, _ closure: @escaping QueueCompletionClosure) -> Queue {
-        self.elements.append(QueuePoint(gcd, .completion(closure: closure)))
-        return self
+    public final func userInteractive(_ closure: @escaping Closure) -> Task {
+        return Task(Queue.userInteractive, self, closure)
     }
     
-    public final func onCancel(_ gcd: GCD = GCD.main, _ closure: @escaping QueueCancelClosure) -> Queue {
-        self.elements.append(QueuePoint(gcd, .cancel(closure: closure)))
-        return self
+    public final func userInitiated(_ closure: @escaping Closure) -> Task {
+        return Task(Queue.userInitiated, self, closure)
+    }
+    
+    public final func utility(_ closure: @escaping Closure) -> Task {
+        return Task(Queue.utility, self, closure)
+    }
+    
+    public final func onDefault(_ closure: @escaping Closure) -> Task {
+        return Task(Queue.default, self, closure)
+    }
+    
+    public final func custom(_ queue: DispatchQueue, _ closure: @escaping Closure) -> Task {
+        return Task(Queue.custom(queue: queue), self, closure)
+    }
+    
+    public final func after(_ queue: Queue = Queue.background, seconds: Double, _ closure: @escaping Closure) -> Task {
+        return Task(queue, self) { result in
+            Task.waitBlock(seconds)()
+            return closure(result)
+        }
+    }
+    
+    public final func wait(_ queue: Queue = Queue.background, seconds: Double) -> Task {
+        return Task(queue, self) { result in
+            Task.waitBlock(seconds)()
+            return result
+        }
     }
 }

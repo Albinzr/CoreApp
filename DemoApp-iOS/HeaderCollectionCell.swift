@@ -29,26 +29,10 @@ class HeaderCollectionCell: BaseCollectionCell {
     
     let imageBaseUrl = "http://" + (Quintype.publisherConfig?.cdn_image)! + "/"
     
-    
-    class func fileLocation(fileName:String) -> URL {
-        let path = NSURL(fileURLWithPath: NSTemporaryDirectory())
-        let fileURL = path.appendingPathComponent(fileName)
-        return fileURL!
-    }
-    
-
-    
     override func configure(data: Any?) {
-        
-        
-        
-        
-        
-        
+
         if let story = data as? Story{
-            
-            
-            
+    
             if let header = story.headline{ self.storyHeader.text = header }
             if let storySection = story.sections[0].name{ self.section.text = storySection }
             if let publishedDate = story.first_published_at{ self.date.text = publishedDate.convertTimeStampToDate }
@@ -57,15 +41,7 @@ class HeaderCollectionCell: BaseCollectionCell {
              self.coverImageView.loadImage(url: imageBaseUrl + coverImage, targetSize: CGSize(width: self.coverImageView.bounds.width, height: self.coverImageView.bounds.height))
                 
             }
-            
-            
-            
-            
         }
-        
-        
-        
-        
     }
     
     
@@ -77,8 +53,8 @@ class HeaderCollectionCell: BaseCollectionCell {
     
     var alphaLayerForCoverImage:UIView = {
         let view = UIView()
-        view.backgroundColor = Themes.DefaultThemes.HomeHeaderCell.alphaLayerForCoverImageColor
-        view.alpha = Themes.DefaultThemes.HomeHeaderCell.opacityAlphaLayerForCoverImageColor
+        view.backgroundColor = Themes.DefaultThemes.homePageCells.HomeHeaderCell.alphaLayerForCoverImageColor
+        view.alpha = Themes.DefaultThemes.homePageCells.HomeHeaderCell.opacityAlphaLayerForCoverImageColor
         return view
     }()
     
@@ -92,7 +68,7 @@ class HeaderCollectionCell: BaseCollectionCell {
     var sepratingBar:UIView = {
         
         let view = UIView()
-        view.backgroundColor = Themes.DefaultThemes.HomeHeaderCell.socialSepratorLineColor
+        view.backgroundColor = Themes.DefaultThemes.homePageCells.HomeHeaderCell.socialSepratorLineColor
         
         return view
         
@@ -101,7 +77,7 @@ class HeaderCollectionCell: BaseCollectionCell {
     var date:UILabel = {
         
         let label = UILabel()
-        label.textColor = Themes.DefaultThemes.HomeHeaderCell.dateColor
+        label.textColor = Themes.DefaultThemes.homePageCells.HomeHeaderCell.dateColor
         return label
         
     }()
@@ -109,7 +85,7 @@ class HeaderCollectionCell: BaseCollectionCell {
     var section:UILabel = {
         
         let label = UILabel()
-        label.textColor = Themes.DefaultThemes.HomeHeaderCell.sectionTextColor
+        label.textColor = Themes.DefaultThemes.homePageCells.HomeHeaderCell.sectionTextColor
         return label
         
     }()
@@ -119,7 +95,7 @@ class HeaderCollectionCell: BaseCollectionCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .justified
-        label.textColor = Themes.DefaultThemes.HomeHeaderCell.storyHeaderColor
+        label.textColor = Themes.DefaultThemes.homePageCells.HomeHeaderCell.storyHeaderColor
         return label
         
     }()
@@ -127,7 +103,7 @@ class HeaderCollectionCell: BaseCollectionCell {
     var border:UIView = {
         
         let view = UIView()
-        view.backgroundColor = Themes.DefaultThemes.HomeHeaderCell.sectionUnderlineColor
+        view.backgroundColor = Themes.DefaultThemes.homePageCells.HomeHeaderCell.sectionUnderlineColor
         return view
         
     }()
@@ -172,8 +148,7 @@ class HeaderCollectionCell: BaseCollectionCell {
         self.bottomSocialBar.addSubview(bookMarkButton)
         self.bottomSocialBar.addSubview(shareButton)
         
-        
-        
+
         coverImageView.anchor(self.contentView.topAnchor, left: self.contentView.leftAnchor, bottom: self.contentView.bottomAnchor, right: self.contentView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 414)
         
         alphaLayerForCoverImage.fillSuperview()
@@ -186,7 +161,7 @@ class HeaderCollectionCell: BaseCollectionCell {
         
         section.anchor(nil, left: self.leftAnchor, bottom: storyHeader.topAnchor, right: nil, topConstant: 0, leftConstant: 15, bottomConstant: 10, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
-        border.anchor(nil, left: self.section.leftAnchor, bottom: self.section.bottomAnchor, right: self.section.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -2, rightConstant: 0, widthConstant: section.bounds.width, heightConstant: Themes.DefaultThemes.HomeHeaderCell.sectionUnderlineHeight)
+        border.anchor(nil, left: self.section.leftAnchor, bottom: self.section.bottomAnchor, right: self.section.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -2, rightConstant: 0, widthConstant: section.bounds.width, heightConstant: Themes.DefaultThemes.homePageCells.HomeHeaderCell.sectionUnderlineHeight)
         
         date.anchor(nil, left: nil, bottom: self.storyHeader.topAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 15, rightConstant: 15, widthConstant: 0, heightConstant: 0)
         
@@ -195,6 +170,7 @@ class HeaderCollectionCell: BaseCollectionCell {
         bookMarkButton.anchor(self.bottomSocialBar.topAnchor, left: self.commentButton.rightAnchor, bottom: self.bottomSocialBar.bottomAnchor, right: nil, topConstant: 5, leftConstant: 15, bottomConstant: 5, rightConstant: 0, widthConstant: 30, heightConstant: 30)
         
         shareButton.anchor(self.bottomSocialBar.topAnchor, left: self.bookMarkButton.rightAnchor, bottom: self.bottomSocialBar.bottomAnchor, right: nil, topConstant: 5, leftConstant: 15, bottomConstant: 5, rightConstant: 0, widthConstant: 30, heightConstant: 30)
+        
         
         
     }

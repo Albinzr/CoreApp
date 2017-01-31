@@ -71,7 +71,7 @@ class HomeContainerController: ButtonBarPagerTabStripViewController{
         var viewControllerCollection:[UIViewController] = []
         
         menu?.forEach({ (menu) in
-            print(menu.title!)
+//            print(menu.title!)
             let child_1 = PagerController.init(singleMenu: menu)
             child_1.viewDidLoad()
             viewControllerCollection.append(child_1)

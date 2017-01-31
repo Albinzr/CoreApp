@@ -99,8 +99,7 @@ class PagerController: BaseController,IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupViews()
+
         loadData()
         self.navigationController?.hidesBarsOnSwipe = true
     }

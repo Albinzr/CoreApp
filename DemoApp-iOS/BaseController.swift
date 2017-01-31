@@ -14,7 +14,7 @@ class BaseController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         setupViews()
         NotificationCenter.default.addObserver(self, selector: #selector(BaseController.didEnterForeground(notification:)), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
-        loadData()
+        clearUnusedImagesfromCache()
         
     }
     
@@ -30,10 +30,11 @@ class BaseController: UIViewController {
     
     public func setupViews(){
         
+        
     }
     
     public func loadData(){
-        clearUnusedImagesfromCache()
+        
         
     }
     

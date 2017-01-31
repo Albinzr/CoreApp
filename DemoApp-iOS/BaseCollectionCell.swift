@@ -11,6 +11,7 @@ import UIKit
 class BaseCollectionCell: UICollectionViewCell {
     
     
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -42,11 +43,11 @@ class BaseCollectionCell: UICollectionViewCell {
 //        self.updateConstraintsIfNeeded()
 //        self.setNeedsLayout()
 //        self.layoutIfNeeded()
-        
+//        
         var size = UILayoutFittingCompressedSize
         size.width = newSize.width
         
-        let cellSize = self.contentView.systemLayoutSizeFitting(size, withHorizontalFittingPriority: 1000, verticalFittingPriority: 250)
+        let cellSize = self.contentView.systemLayoutSizeFitting(size, withHorizontalFittingPriority: 1000, verticalFittingPriority:1)
         contentView.removeConstraint(widthConstraint)
         
         return cellSize

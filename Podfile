@@ -3,7 +3,7 @@ target 'DemoApp-iOS'  do
     
     use_frameworks!
     
-    pod 'Quintype', git: 'https://github.com/Albinzr/Quintype.git', :tag => '0.33'
+    pod 'Quintype', git: 'https://github.com/Albinzr/Quintype.git', :tag => '0.34'
     
     #For pageMenu in Home Page
     pod 'XLPagerTabStrip',   git: 'https://github.com/KelvinJin/XLPagerTabStrip.git', :branch => 'swift3'

@@ -44,9 +44,9 @@ class DefaultStoryCell: BaseCollectionCell {
         
         let view:UIView = UIView()
         view.layer.cornerRadius = 15
-        view.layer.borderColor = Themes.DefaultThemes.defaultCell.cellBorder
+        view.layer.borderColor = Themes.DefaultThemes.homePageCells.defaultCell.cellBorder
         view.layer.borderWidth = 1
-        view.backgroundColor =  Themes.DefaultThemes.defaultCell.cellBackground
+        view.backgroundColor =  Themes.DefaultThemes.homePageCells.defaultCell.cellBackground
         return view
         
     }()
@@ -54,7 +54,7 @@ class DefaultStoryCell: BaseCollectionCell {
     let imageCoverView:UIView = {
         
         let view:UIView = UIView()
-        view.backgroundColor = Themes.DefaultThemes.defaultCell.alphaLayerForCoverImageColor
+        view.backgroundColor = Themes.DefaultThemes.homePageCells.defaultCell.alphaLayerForCoverImageColor
         view.backgroundColor = .black
         view.alpha = 0.2
         return view
@@ -70,7 +70,7 @@ class DefaultStoryCell: BaseCollectionCell {
     var date:UILabel = {
         
         let label = UILabel()
-        label.textColor = Themes.DefaultThemes.defaultCell.dateColor
+        label.textColor = Themes.DefaultThemes.homePageCells.defaultCell.dateColor
         return label
         
     }()
@@ -78,7 +78,7 @@ class DefaultStoryCell: BaseCollectionCell {
     var section:UILabel = {
         
         let label = UILabel()
-        label.textColor = Themes.DefaultThemes.defaultCell.sectionTextColor
+        label.textColor = Themes.DefaultThemes.homePageCells.defaultCell.sectionTextColor
         return label
         
     }()
@@ -86,7 +86,7 @@ class DefaultStoryCell: BaseCollectionCell {
     var border:UIView = {
         
         let view = UIView()
-        view.backgroundColor = Themes.DefaultThemes.defaultCell.sectionUnderlineColor
+        view.backgroundColor = Themes.DefaultThemes.homePageCells.defaultCell.sectionUnderlineColor
         return view
         
     }()
@@ -96,7 +96,7 @@ class DefaultStoryCell: BaseCollectionCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .justified
-        label.textColor = Themes.DefaultThemes.defaultCell.storyHeaderColor
+        label.textColor = Themes.DefaultThemes.homePageCells.defaultCell.storyHeaderColor
         return label
         
     }()
@@ -111,7 +111,7 @@ class DefaultStoryCell: BaseCollectionCell {
     var sepratingBar:UIView = {
         
         let view = UIView()
-        view.backgroundColor = Themes.DefaultThemes.defaultCell.socialSepratorLineColor
+        view.backgroundColor = Themes.DefaultThemes.homePageCells.defaultCell.socialSepratorLineColor
         return view
         
     }()
@@ -164,7 +164,7 @@ class DefaultStoryCell: BaseCollectionCell {
         
         section.anchor(self.coverView.topAnchor, left: self.coverView.leftAnchor, bottom: nil, right: nil, topConstant: 15, leftConstant: 15, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         
-        border.anchor(nil, left: self.section.leftAnchor, bottom: self.section.bottomAnchor, right: self.section.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -2, rightConstant: 0, widthConstant: section.bounds.width, heightConstant: Themes.DefaultThemes.defaultCell.sectionUnderlineHeight)
+        border.anchor(nil, left: self.section.leftAnchor, bottom: self.section.bottomAnchor, right: self.section.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: -2, rightConstant: 0, widthConstant: section.bounds.width, heightConstant: Themes.DefaultThemes.homePageCells.defaultCell.sectionUnderlineHeight)
         
         date.anchor(self.coverView.topAnchor, left: nil, bottom: nil, right: self.coverView.rightAnchor, topConstant: 15, leftConstant: 0, bottomConstant: 0, rightConstant: 15, widthConstant: 0, heightConstant: 0)
         

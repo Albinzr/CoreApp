@@ -32,50 +32,6 @@ public struct Themes{
             
         }
         
-        public struct HomeHeaderCell{
-            
-            static let alphaLayerForCoverImageColor = UIColor.black
-            static let opacityAlphaLayerForCoverImageColor:CGFloat = 0.2
-            
-            static let sociallIcon = UIColor.white.cgColor
-            
-            static let sectionTextColor = UIColor.white
-            static let sectionUnderlineColor = UIColor.white
-            static let sectionUnderlineHeight:CGFloat = 3
-            
-            static let socialSepratorLineColor = UIColor.white
-            static let socialSepratorLineHeight = 0.5
-            
-            static let storyHeaderColor = UIColor.white
-            
-            static let dateColor = UIColor.white
-            
-            static let cellBorder = UIColor(red: 246/255.0, green: 246/255.0, blue: 246/255.0, alpha: 1).cgColor
-            static let cellBackground = UIColor(red: 246/255.0, green: 246/255.0, blue: 246/255.0, alpha: 1)
-            
-        }
-        public struct defaultCell{
-            
-            static let alphaLayerForCoverImageColor = UIColor.black
-            static let opacityAlphaLayerForCoverImageColor:CGFloat = 0.2
-            
-            static let sociallIcon = UIColor.white.cgColor
-            
-            static let sectionTextColor = UIColor.white
-            static let sectionUnderlineColor = UIColor.white
-            static let sectionUnderlineHeight:CGFloat = 3
-            
-            static let socialSepratorLineColor = UIColor.white
-            static let socialSepratorLineHeight = 0.5
-            
-            static let storyHeaderColor = UIColor.black
-            
-            static let dateColor = UIColor.white
-            
-            static let cellBorder = UIColor(red: 246/255.0, green: 246/255.0, blue: 246/255.0, alpha: 1).cgColor
-            static let cellBackground = UIColor(red: 246/255.0, green: 246/255.0, blue: 246/255.0, alpha: 1)
-        }
-        
         public struct menu{
             static let tabarBackgroundColor = UIColor(red: 46.0/255.0, green: 14.0/255.0, blue: 74.0/255.0, alpha: 1.0)
             static let tabTextColor = UIColor.white
@@ -84,6 +40,11 @@ public struct Themes{
             static let tabarheight = CGFloat(20)
             
         }
+        
+        static let homePageCells = HomePageCells.self
+        static let storyDetailCells = StoryDetailCells.self
+        
+        
         
         
 //        classic red UIColor(red: 255/255.0, green: 115/255.0, blue: 115/255.0, alpha: 1).cgColor
